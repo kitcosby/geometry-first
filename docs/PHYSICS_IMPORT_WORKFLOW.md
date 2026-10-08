@@ -1,76 +1,68 @@
-# Workflow: Physics Import — Established Physics into R Theory Notation
+# Workflow: Physics Import as Trigonometric Identity
 
-**Purpose:** Systematically translate established physics (gravitation, EM, QM, etc.) into R Theory operator notation (srx, sxp, cxp, crx, urx, uxp, saws, FlatWave). This is the REVERSE of derivation: we start from known physics and express it in our language, to see what the notation reveals and where it breaks.
+**Reframing (Kit, 2026-10-08):** Treat each import as a trigonometric identity. The established physics is the **known result** (the RHS). Our job is to **provide the proof** — starting from operator definitions, via valid steps, arriving at the physical law.
 
-**Principle:** The physics is the target; the notation is the lens. We do NOT derive physics from operators. We TRANSLATE known physics into operator form, then ask: (1) does the translation work? (2) what does it reveal? (3) where does it fail?
+This is not "translation" (loose). It is **proof obligation**:
+- **Given:** R Theory operators (srx, sxp, cxp, crx, urx, uxp, saws, FW) and their proven properties.
+- **Prove:** [operator expression] = [known physical law].
 
-**Method:** For each physical theory/law:
-1. **State the established form** (textbook, with source).
-2. **Identify the R Theory analogues** (which operators correspond to which physical quantities?).
-3. **Attempt the translation** (write the physical law in operator notation).
-4. **Verify** (does the operator form reproduce the physical predictions? Via Sage/numerics).
-5. **Scope** (PROVED/CHECKED/ASSERTED/OPEN/INCOMPLETE/FALSIFIED).
+Like sin²x+cos²x=1: you don't "translate" it. You prove it from definitions.
+
+## Proof Template
+
+For each target:
+
+1. **Known result** (established physics, with source). This is the RHS — not to be proven, but to be matched.
+2. **Operator statement** (conjecture in R Theory notation). This is the LHS — what we claim equals the RHS.
+3. **Proof** (from operator definitions, via valid algebraic/analytic steps).
+4. **Status:** PROVED (proof complete) / OPEN (no proof yet) / INCOMPLETE (partial) / FALSIFIED (operator statement refuted).
+
+**Rules:**
+- The known result is never "derived" — it is the target.
+- The proof must start from operator definitions and proven theorems only.
+- No physical constants (G, ħ, c) enter the operators. They live in Γ (calibration), not in the proof.
+- If the proof needs an unproven lemma, mark INCOMPLETE and state the lemma.
+- If the operator statement is wrong, mark FALSIFIED — do not adjust the physics to fit.
 
 ---
 
-## Import Queue (priority order)
+## Import Queue
 
-### P1: Newtonian Gravitation (inverse-square)
-- **Established:** F = Gm₁m₂/r². Potential Φ = −GM/r.
-- **R Theory hook:** Lecture 81 (inverse-square as projection); urx ∝ 1/r² via r(x)=R√(2/urx(x)) on [π/4,π/2).
-- **Translation target:** Express Φ(r) in terms of urx. The doc gives urx=2R²/r², so Φ ∝ −urx.
-- **Open:** The r(x) map is definitional, not derived. The "import" here is: can we get the Poisson equation ∇²Φ=4πGρ in operator form?
+### P1: Newtonian Gravitation
+- **Known (RHS):** F = Gm₁m₂/r². Equivalently, potential Φ(r) = −GM/r satisfies ∇²Φ = 4πGρ.
+- **Operator statement (LHS, conjectured):** Φ ∝ −urx, via the phase-to-radius map r(x)=R√(2/urx(x)).
+- **Proof obligation:** From urx definitions, show that −urx (as a function of r) satisfies the Poisson equation (up to Γ-supplied G).
+- **Blocker:** The r(x) map is definitional, not derived. The proof must either derive r(x) or explicitly assume it as a Γ input.
 - **Status:** OPEN.
 
-### P2: General Relativity (Einstein field equations)
-- **Established:** G_μν = 8πT_μν. Schwarzschild metric.
-- **R Theory hook:** Book 9 GR/Schwarzschild material (in archive); the conic geometry (hyperbola→ellipse) resembles causal structure.
-- **Translation target:** Can the Schwarzschild radial coordinate be expressed via the phase-to-radius map? Does the conic chain (Q_hyp → Q_conic) mirror the light-cone → spatial slice?
-- **Status:** OPEN. (Archive has Book 9 material; needs extraction.)
-
-### P3: Electromagnetism (Maxwell)
-- **Established:** Maxwell's equations, E/B fields, 1/r² Coulomb law.
-- **R Theory hook:** E/B witnesses (from MEMORY: "E/B: cxp·crx=1 factorizes mass-shell; EM: Q²+S²=1 matches circular polarization").
-- **Translation target:** Express E, B in terms of (cxp, crx) or the spinor components. The "E/B/O Witnesses" are representation witnesses, not derivations — the import would make them explicit.
+### P2: General Relativity
+- **Known (RHS):** G_μν = 8πT_μν. Schwarzschild: ds² = −(1−2M/r)dt² + (1−2M/r)⁻¹dr² + r²dΩ².
+- **Operator statement (LHS, conjectured):** TBD. Candidate: the conic chain (Q_hyp → Q_conic) mirrors causal → spatial structure; the phase-to-radius map gives r.
+- **Proof obligation:** TBD (needs P1 first).
 - **Status:** OPEN.
 
-### P4: Quantum Mechanics (Schrödinger/Dirac)
-- **Established:** Schrödinger equation, Dirac equation, spin-1/2.
-- **R Theory hook:** The Cl(4,4) 16-spinor; the Veronese/spin-1 structure; Z₂=e^{2ix} phasor.
-- **Translation target:** Can the Dirac operator be written using the Cl(4,4) generators E_μ? (This is standard: Dirac operator = Σ E_μ ∂_μ.) The import is: what does R Theory's specific 16 add?
+### P3: Electromagnetism
+- **Known (RHS):** Maxwell's equations. Coulomb: E = Q/(4πϵ₀r²)r̂.
+- **Operator statement (LHS, conjectured):** TBD. Candidate: E/B from (cxp, crx) via the E/B witnesses (cxp·crx=1 factorizes mass-shell).
+- **Proof obligation:** TBD.
 - **Status:** OPEN.
 
-### P5: Thermodynamics (entropy)
-- **Established:** dS ≥ 0, S = k log Ω.
-- **R Theory hook:** S=sawup=1/urx; entropy as decreasing available energy (Kit's interpretation); dS/dx Bernoulli exact.
-- **Translation target:** The operator dynamics ALREADY gives an entropy-like quantity. The import is: can we match it to thermodynamic entropy via a Γ projection? What is the "temperature" in operator terms?
-- **Status:** OPEN. (Operator side PROVED; physical identification missing.)
+### P4: Quantum Mechanics
+- **Known (RHS):** Dirac equation (iγ^μ∂_μ − m)ψ = 0.
+- **Operator statement (LHS, conjectured):** Dirac operator = Σ E_μ ∂_μ using Cl(4,4) generators E_μ (standard construction).
+- **Proof obligation:** Show the Cl(4,4) E_μ satisfy the Dirac algebra {E_μ,E_ν}=2η_μν (this is by construction — PROVED in T1 setup). Then: what does R Theory's specific 16 add beyond standard Dirac theory?
+- **Status:** OPEN (the algebra is standard; the R Theory content is the question).
+
+### P5: Thermodynamics
+- **Known (RHS):** dS ≥ 0 (second law). S = k_B log Ω (Boltzmann).
+- **Operator statement (LHS, conjectured):** S = sawup = 1/urx; dS/dx = (srx|csc| − crx|sec|)S² (Bernoulli, PROVED in Q7).
+- **Proof obligation:** The operator dynamics (Q7) is PROVED. The missing step is the physical identification: what is "temperature" in operator terms? What is the Γ map from x (phase) to t (time)?
+- **Status:** INCOMPLETE (operator side PROVED; physical identification OPEN).
 
 ---
 
-## Translation Rules
+## What "proof" means here
 
-1. **Operators are the language.** Every physical quantity must be expressed as a function of (srx, sxp, cxp, crx, urx, uxp, saws, FW) or their derivatives.
-2. **No new primitives.** Do not introduce physical constants (G, ħ, c) as operator inputs. They enter via Γ (calibration), not via the operators.
-3. **Verify, don't assert.** Each translation must be checked (Sage/numerics) against the established physical predictions.
-4. **Mark failures.** If a translation doesn't work, mark FALSIFIED or INCOMPLETE, not "future work."
+We are not proving the physics (it is established). We are proving the **identity**: that the operator expression equals the physical law. The proof lives entirely in the operator algebra; the physics is the fixed target.
 
----
-
-## Relation to Γ (projection)
-
-The physics import is the Φ side (external targets). The operator side is E (inherited evaluation). Γ (units, scale, origin) is what connects them. This workflow handles Φ→E (translation). The Γ construction (calibration) is separate.
-
-See: `~/workspace/vol4/physics_interface/PROJECTION_CONTRACT_DRAFT.md`.
-
----
-
-## Execution Log
-
-| Target | Date | Result | Status |
-|--------|------|--------|--------|
-| P1 (Newton) | | | OPEN |
-| P2 (GR) | | | OPEN |
-| P3 (EM) | | | OPEN |
-| P4 (QM) | | | OPEN |
-| P5 (Thermo) | | | OPEN |
+If we cannot prove the identity, we do not have an import. We have an OPEN problem.

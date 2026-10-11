@@ -1,0 +1,47 @@
+from sage.all import *
+# E52: Multi-rank Delta in polar notation via E_op = e^{2ix} (E28, proved).
+# Delta_{ab} E_op = e^{2ix_a} - e^{2ix_b}.
+# Polar form: factor as e^{i(x_a+x_b)} * 2i * sin(x_a - x_b).
+
+print("=== Polar form of multi-rank Delta ===")
+print("E_op(x) = e^{2ix} (E28, proved in QI).")
+print()
+print("Delta_{ab} E_op = e^{2ix_a} - e^{2ix_b}")
+print("  = e^{i(x_a+x_b)} * (e^{i(x_a-x_b)} - e^{-i(x_a-x_b)})")
+print("  = e^{i(x_a+x_b)} * 2i * sin(x_a - x_b).")
+print()
+print("Polar decomposition:")
+print("  Magnitude: |Delta E_op| = 2|sin(x_a - x_b)|.")
+print("  Argument: arg(Delta E_op) = (x_a + x_b) + pi/2 (mod 2pi),")
+print("    adjusted by sign of sin(x_a - x_b).")
+print()
+# Verify symbolically
+xa, xb = var('xa xb')
+E_a = exp(2*I*xa); E_b = exp(2*I*xb)
+Delta = (E_a - E_b).simplify_full()
+# Factor
+factored = (exp(I*(xa+xb)) * 2*I * sin(xa-xb)).simplify_full()
+diff = (Delta - factored).simplify_full()
+print(f"Symbolic check: Delta - factored = {diff}")
+print(f"Identity holds: {diff==0}")
+print()
+print("=== Connection to Flatwave ===")
+print("Flatwave = 1/urx + 1/uxp (real, =sgn(sin2x)).")
+print("E_op = (srx+crx-sxp-cxp + 4i)/(urx+uxp) = cos2x + i sin2x.")
+print("Real(E_op) = cos2x, Imag(E_op) = sin2x = 4/(urx+uxp).")
+print()
+print("The multi-rank Delta in polar is EXACT and SIMPLE.")
+print("No quotient rule, no resonant gate. The 'spike' was an artifact")
+print("of the Cartesian (N/D) representation, not the geometry.")
+print()
+print("=== Magnitude bound ===")
+print("|Delta_{ab} E_op| = 2|sin(x_a - x_b)| <= 2.")
+print("Maximum separation (antipodal): |Delta|=2 when |x_a-x_b|=pi/2.")
+print("In QI (x in (0,pi/2)), max |x_a-x_b| < pi/2, so |Delta| < 2.")
+print("The multi-rank difference is BOUNDED. No singularities.")
+print()
+print("WROTE /root/e52_polar.txt")
+with open('/root/e52_polar.txt','w') as f:
+    f.write("Delta E_op = 2i*e^{i(xa+xb)}*sin(xa-xb)\n")
+    f.write(f"Identity: {diff==0}\n")
+    f.write("|Delta| = 2|sin(xa-xb)| <= 2\n")

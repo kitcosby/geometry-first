@@ -45,13 +45,38 @@ cxp & -urx & uxp \\
 \]
 \end{definition}
 
-\begin{lemma}[Double-angle identities, CHECKED]
+\begin{theorem}[Double-angle identities, PROVED]
 \[
 \frac{\sin(2x)}{4} = \frac{1}{urx+uxp}, \qquad
 \cos(2x) = \frac{srx+crx-sxp-cxp}{urx+uxp}.
 \]
-These were verified numerically to $10^{-16}$ on 17 Quadrant-I points. An analytic derivation is desirable but not yet supplied. Status: CHECKED, not PROVED.
-\end{lemma}
+\end{theorem}
+
+\begin{proof}
+Set $t=\tan(x/2)$. Then $\sin x = \frac{2t}{1+t^2}$, $\cos x = \frac{1-t^2}{1+t^2}$, and:
+\[
+srx = \frac{1}{t}, \quad sxp = t, \quad
+cxp = \frac{1+t}{1-t}, \quad crx = \frac{1-t}{1+t}.
+\]
+Compute:
+\[
+urx = srx-crx = \frac{1}{t}-\frac{1-t}{1+t} = \frac{1+t^2}{t(1+t)},
+\qquad
+uxp = cxp-sxp = \frac{1+t}{1-t}-t = \frac{1+t^2}{1-t}.
+\]
+Then:
+\[
+urx+uxp = (1+t^2)\left(\frac{1}{t(1+t)}+\frac{1}{1-t}\right)
+= \frac{(1+t^2)^2}{t(1-t^2)}.
+\]
+Now $\sin(2x)/4 = \frac{1}{2}\sin x\cos x = \frac{t(1-t^2)}{(1+t^2)^2} = \frac{1}{urx+uxp}$, proving the first identity.
+
+For the second: $srx+crx = \frac{1+2t-t^2}{t(1+t)}$, $sxp+cxp = \frac{1+2t-t^2}{1-t}$, so:
+\[
+srx+crx-sxp-cxp = \frac{(1+2t-t^2)(1-2t-t^2)}{t(1-t^2)}.
+\]
+Dividing by $urx+uxp = \frac{(1+t^2)^2}{t(1-t^2)}$ gives $\frac{(1+2t-t^2)(1-2t-t^2)}{(1+t^2)^2} = \frac{1-6t^2+t^4}{(1+t^2)^2} = \cos(2x)$, since $\cos(2x)=\cos^2x-\sin^2x=\frac{(1-t^2)^2-4t^2}{(1+t^2)^2}$.
+\end{proof}
 
 \section{Exact $\mathfrak{sl}(3,\mathbb{R})$}
 
@@ -173,6 +198,22 @@ The numeric Killing signature of this 35-dimensional Lie algebra is $(18,17,0)$,
 
 \noindent\textit{Computation:} E92c (numeric, float). The exact $35\times35$ Killing over $\overline{\mathbb{Q}}$ was computationally infeasible. The numeric signature $(18,17,0)$ is non-degenerate (semisimple) but does not match the split form. Status: CHECKED (numeric), not PROVED. \qed
 
+\begin{remark}[Killing signature formula]
+For the record, the Killing signature of $\mathfrak{sl}(n,\mathbb{R})$ is:
+\[
+\left(\frac{n^2+n-2}{2}, \frac{n^2-n}{2}, 0\right).
+\]
+For $n=3$: $(5,3)$. $n=4$: $(9,6)$. $n=5$: $(14,10)$. $n=6$: $(20,15)$. The mismatch at $n=6$---$(18,17)$ vs.\ $(20,15)$---is vivid.
+\end{remark}
+
+\begin{remark}[Failure mechanism, OPEN]
+The off-diagonal vector $v_n$ has only two non-zero entries, $\sin(2^{n-2}x)$ and $\cos(2^{n-2}x)$. Under the adjoint action of the embedded $\mathfrak{sl}(n)$, the orbit of $v_n$ should span the defining representation $\mathbb{R}^n$. The failure at $n=5$ (building $X_6$) is likely because $\sin(8x)$ and $\cos(8x)$ at the chosen $x$ values become algebraically dependent on existing entries, so the orbit collapses and the off-diagonal block does not generate the full $\mathbb{R}^5\oplus(\mathbb{R}^5)^*$ representation. This is a representation-theoretic obstruction, not just numerical. A complete proof is OPEN.
+\end{remark}
+
+\begin{remark}[Identification hypothesis, OPEN]
+The signature $(18,17,0)$ matches $\mathfrak{su}(3,3)$ on dimension (35) and maximal compact dimension ($8+8+1=17$). However, the generators are $6\times6$ \textit{real} matrices; $\mathfrak{su}(3,3)$'s defining representation is complex $6$-dimensional (real $12$-dimensional). The numeric $(18,17)$ may itself be erroneous. Identification of the 35-dimensional algebra remains OPEN.
+\end{remark}
+
 \begin{corollary}
 The exact block-extension ladder terminates at $\mathfrak{sl}(5,\mathbb{R})$. The 35-dimensional algebra exists but is not identified as $\mathfrak{sl}(6,\mathbb{R})$.
 \end{corollary}
@@ -180,10 +221,10 @@ The exact block-extension ladder terminates at $\mathfrak{sl}(5,\mathbb{R})$. Th
 \section{Scope and limitations}
 
 \begin{itemize}
-\item \textbf{PROVED:} $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, $\mathfrak{sl}(5,\mathbb{R})$ via exact rank, closure, Killing signature. The 35-dim Lie algebra via exact rank and closure.
-\item \textbf{CHECKED:} Double-angle identities (numeric). The $(18,17,0)$ signature (numeric).
+\item \textbf{PROVED:} Double-angle identities (analytic). $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, $\mathfrak{sl}(5,\mathbb{R})$ via exact rank, closure, Killing signature. The 35-dim Lie algebra via exact rank and closure.
+\item \textbf{CHECKED:} The $(18,17,0)$ signature (numeric).
 \item \textbf{ASSERTED:} None in this paper.
-\item \textbf{OPEN:} Analytic proof of the double-angle identities. Identification of the 35-dim algebra. Whether a different construction yields $\mathfrak{sl}(6,\mathbb{R})$.
+\item \textbf{OPEN:} Identification of the 35-dim algebra ($\mathfrak{su}(3,3)$ hypothesis). Mechanism of failure at $n=6$. Whether a different $v_5$ yields $\mathfrak{sl}(6,\mathbb{R})$.
 \end{itemize}
 
 No physical labels (space, time, force, particle) are assigned. No connection to $E_8$ or M-theory is claimed. The $A$-series ladder is classical Lie theory; it does not derive exceptional algebras.

@@ -9,7 +9,7 @@
 \newtheorem{definition}{Definition}
 
 \title{Exact $\mathfrak{sl}(n,\mathbb{R})$ from Trigonometric Operators:\\
-$\mathfrak{sl}(3)$, $\mathfrak{sl}(4)$, $\mathfrak{sl}(5)$}
+$\mathfrak{sl}(3)$, $\mathfrak{sl}(4)$, $\mathfrak{sl}(5)$, $\mathfrak{sl}(6)$}
 \author{Kit Cosby}
 \date{October 11, 2026}
 
@@ -17,7 +17,7 @@ $\mathfrak{sl}(3)$, $\mathfrak{sl}(4)$, $\mathfrak{sl}(5)$}
 \maketitle
 
 \begin{abstract}
-From six trigonometric operators ($srx$, $sxp$, $cxp$, $crx$, $urx$, $uxp$) we construct exact matrix families that generate $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, and $\mathfrak{sl}(5,\mathbb{R})$ over exact algebraic arithmetic ($\overline{\mathbb{Q}}$). Each identification is proved via exact rank, exact Lie closure, and exact Killing signature. A 35-dimensional Lie algebra is constructed at the next rung, but its Killing signature $(18,17,0)$ does not match $\mathfrak{sl}(6,\mathbb{R})$; the exact ladder terminates at $\mathfrak{sl}(5,\mathbb{R})$. All results are scope-labeled: PROVED (exact), CHECKED (numeric), ASSERTED (unproved).
+From six trigonometric operators ($srx$, $sxp$, $cxp$, $crx$, $urx$, $uxp$) we construct exact matrix families that generate $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, $\mathfrak{sl}(5,\mathbb{R})$, and $\mathfrak{sl}(6,\mathbb{R})$ over exact algebraic arithmetic ($\overline{\mathbb{Q}}$). Each identification is proved via exact rank and exact Lie closure; for $n=3,4,5$ the Killing signature provides independent confirmation, and for $n=6$ the identification follows by dimension count. All results are scope-labeled: PROVED (exact), CHECKED (numeric), ASSERTED (unproved).
 \end{abstract}
 
 \section{Operators and the base matrix}
@@ -184,47 +184,25 @@ v_5(x) =
 \begin{theorem}[PROVED]
 Thirty-five exact traceless $6\times6$ matrices from $X_6(x)$:
 \begin{itemize}
-\item have rank 35 (exact);
+\item have rank 35 (exact, confirmed by independent re-verification);
 \item close under all $\binom{35}{2}=595$ commutators (exact).
 \end{itemize}
-Therefore they form a 35-dimensional Lie algebra.
+Therefore they form a 35-dimensional Lie subalgebra of $\mathfrak{sl}(6,\mathbb{R})$. Since $\dim\mathfrak{sl}(6,\mathbb{R})=35$, this subalgebra is the whole algebra. Therefore it is $\mathfrak{sl}(6,\mathbb{R})$.
 \end{theorem}
 
-\noindent\textit{Proof script:} E91. \qed
-
-\begin{theorem}[CHECKED, negative]
-The numeric Killing signature of this 35-dimensional Lie algebra is $(18,17,0)$, not $(20,15,0)$. Therefore it is \textbf{not} $\mathfrak{sl}(6,\mathbb{R})$.
-\end{theorem}
-
-\noindent\textit{Computation:} E92c (numeric, float). The exact $35\times35$ Killing over $\overline{\mathbb{Q}}$ was computationally infeasible. The numeric signature $(18,17,0)$ is non-degenerate (semisimple) but does not match the split form. Status: CHECKED (numeric), not PROVED. \qed
-
-\begin{remark}[Killing signature formula]
-For the record, the Killing signature of $\mathfrak{sl}(n,\mathbb{R})$ is:
-\[
-\left(\frac{n^2+n-2}{2}, \frac{n^2-n}{2}, 0\right).
-\]
-For $n=3$: $(5,3)$. $n=4$: $(9,6)$. $n=5$: $(14,10)$. $n=6$: $(20,15)$. The mismatch at $n=6$---$(18,17)$ vs.\ $(20,15)$---is vivid.
-\end{remark}
-
-\begin{remark}[Failure mechanism, OPEN]
-The off-diagonal vector $v_n$ has only two non-zero entries, $\sin(2^{n-2}x)$ and $\cos(2^{n-2}x)$. Under the adjoint action of the embedded $\mathfrak{sl}(n)$, the orbit of $v_n$ should span the defining representation $\mathbb{R}^n$. The failure at $n=5$ (building $X_6$) is likely because $\sin(8x)$ and $\cos(8x)$ at the chosen $x$ values become algebraically dependent on existing entries, so the orbit collapses and the off-diagonal block does not generate the full $\mathbb{R}^5\oplus(\mathbb{R}^5)^*$ representation. This is a representation-theoretic obstruction, not just numerical. A complete proof is OPEN.
-\end{remark}
-
-\begin{remark}[Identification hypothesis, OPEN]
-The signature $(18,17,0)$ matches $\mathfrak{su}(3,3)$ on dimension (35) and maximal compact dimension ($8+8+1=17$). However, the generators are $6\times6$ \textit{real} matrices; $\mathfrak{su}(3,3)$'s defining representation is complex $6$-dimensional (real $12$-dimensional). The numeric $(18,17)$ may itself be erroneous. Identification of the 35-dimensional algebra remains OPEN.
-\end{remark}
+\noindent\textit{Proof scripts:} E91 (rank+closure), E94 (independent rank confirmation). The identification follows by dimension count; no Killing signature is needed. An earlier numeric Killing computation giving $(18,17,0)$ is discarded as numerically unstable. \qed
 
 \begin{corollary}
-The exact block-extension ladder terminates at $\mathfrak{sl}(5,\mathbb{R})$. The 35-dimensional algebra exists but is not identified as $\mathfrak{sl}(6,\mathbb{R})$.
+The exact block-extension ladder yields $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, $\mathfrak{sl}(5,\mathbb{R})$, and $\mathfrak{sl}(6,\mathbb{R})$.
 \end{corollary}
 
 \section{Scope and limitations}
 
 \begin{itemize}
-\item \textbf{PROVED:} Double-angle identities (analytic). $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, $\mathfrak{sl}(5,\mathbb{R})$ via exact rank, closure, Killing signature. The 35-dim Lie algebra via exact rank and closure.
-\item \textbf{CHECKED:} The $(18,17,0)$ signature (numeric).
+\item \textbf{PROVED:} Double-angle identities (analytic). $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, $\mathfrak{sl}(5,\mathbb{R})$ via exact rank, closure, Killing signature. $\mathfrak{sl}(6,\mathbb{R})$ via exact rank and closure plus dimension count.
+\item \textbf{CHECKED:} None (the earlier numeric $(18,17,0)$ Killing for $n=6$ is discarded as numerically unstable).
 \item \textbf{ASSERTED:} None in this paper.
-\item \textbf{OPEN:} Identification of the 35-dim algebra ($\mathfrak{su}(3,3)$ hypothesis). Mechanism of failure at $n=6$. Whether a different $v_5$ yields $\mathfrak{sl}(6,\mathbb{R})$.
+\item \textbf{OPEN:} Whether the ladder extends to $\mathfrak{sl}(7,\mathbb{R})$ and beyond. A different choice of angles may avoid the $8x$ aliasing.
 \end{itemize}
 
 No physical labels (space, time, force, particle) are assigned. No connection to $E_8$ or M-theory is claimed. The $A$-series ladder is classical Lie theory; it does not derive exceptional algebras.
@@ -236,8 +214,9 @@ All scripts at \url{https://github.com/kitcosby/geometry-first/tree/main/proofs}
 \item E70, E71, E72: $\mathfrak{sl}(3,\mathbb{R})$.
 \item E88: $\mathfrak{sl}(4,\mathbb{R})$.
 \item E90b, E90c: $\mathfrak{sl}(5,\mathbb{R})$.
-\item E91: 35-dim Lie algebra (rank+closure).
-\item E92c: numeric Killing $(18,17,0)$.
+\item E91: $\mathfrak{sl}(6,\mathbb{R})$ rank+closure.
+\item E94: Independent exact rank confirmation for $\mathfrak{sl}(6,\mathbb{R})$.
+\item E93: $\mathfrak{sl}(4,\mathbb{R})$ with non-zero $v[2]$ (robustness).
 \end{itemize}
 
 \end{document}

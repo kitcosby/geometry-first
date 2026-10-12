@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\title{Exact $\mathfrak{sl}(n,\mathbb{R})$ from Trigonometric Operators:\\
+$\mathfrak{sl}(3)$, $\mathfrak{sl}(4)$, $\mathfrak{sl}(5)$}
+\author{Kit Cosby}
+\date{October 11, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+From six trigonometric operators ($srx$, $sxp$, $cxp$, $crx$, $urx$, $uxp$) we construct exact matrix families that generate $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, and $\mathfrak{sl}(5,\mathbb{R})$ over exact algebraic arithmetic ($\overline{\mathbb{Q}}$). Each identification is proved via exact rank, exact Lie closure, and exact Killing signature. A 35-dimensional Lie algebra is constructed at the next rung, but its Killing signature $(18,17,0)$ does not match $\mathfrak{sl}(6,\mathbb{R})$; the exact ladder terminates at $\mathfrak{sl}(5,\mathbb{R})$. All results are scope-labeled: PROVED (exact), CHECKED (numeric), ASSERTED (unproved).
+\end{abstract}
+
+\section{Operators and the base matrix}
+
+\begin{definition}[Core operators]
+For $x$ in Quadrant I:
+\begin{align*}
+srx &= |\csc x| + \cot x = \frac{1+\cos x}{\sin x}, &
+sxp &= 1/srx, \\
+cxp &= |\sec x| + \tan x = \frac{1+\sin x}{\cos x}, &
+crx &= 1/cxp, \\
+urx &= srx - crx, &
+uxp &= cxp - sxp.
+\end{align*}
+\end{definition}
+
+\begin{definition}[Base matrix]
+\[
+T_a(x) =
+\begin{pmatrix}
+urx & srx & 0 \\
+cxp & -urx & uxp \\
+0 & -uxp & 0
+\end{pmatrix}.
+\]
+\end{definition}
+
+\begin{lemma}[Double-angle identities, CHECKED]
+\[
+\frac{\sin(2x)}{4} = \frac{1}{urx+uxp}, \qquad
+\cos(2x) = \frac{srx+crx-sxp-cxp}{urx+uxp}.
+\]
+These were verified numerically to $10^{-16}$ on 17 Quadrant-I points. An analytic derivation is desirable but not yet supplied. Status: CHECKED, not PROVED.
+\end{lemma}
+
+\section{Exact $\mathfrak{sl}(3,\mathbb{R})$}
+
+\begin{theorem}[PROVED]
+Eight exact traceless $3\times3$ matrices derived from $T_a(x)$ at $x\in\{15^\circ,30^\circ,45^\circ,60^\circ\}$ plus commutators:
+\begin{itemize}
+\item have rank 8 (exact, over $\overline{\mathbb{Q}}$);
+\item close under all $\binom{8}{2}=28$ commutators (exact);
+\item have Killing signature $(5,3)$ (exact);
+\item have quadratic Casimir $C_2 = \frac{4}{9}I_3$ (exact);
+\item have 2-dimensional centralizer (Cartan);
+\item have $A_2$ root system (six nonzero roots in $\pm$ pairs).
+\end{itemize}
+Therefore they span $\mathfrak{sl}(3,\mathbb{R})$.
+\end{theorem}
+
+\noindent\textit{Proof scripts:} E70 (rank+closure), E71 (Casimir), E72 (roots/Cartan). All computations exact over $\overline{\mathbb{Q}}$. \qed
+
+\section{Exact $\mathfrak{sl}(4,\mathbb{R})$}
+
+\begin{definition}[Block extension]
+\[
+X_4(x) =
+\begin{pmatrix}
+T_a(x) & v(x) \\
+v(x)^T & 0
+\end{pmatrix},
+\qquad
+v(x) =
+\begin{pmatrix}
+\sin(2x)/4 \\
+\cos(2x) \\
+0
+\end{pmatrix},
+\]
+where the components are given by the Lemma via $urx,uxp,srx,crx,sxp,cxp$.
+\end{definition}
+
+\begin{theorem}[PROVED]
+Fifteen exact traceless $4\times4$ matrices from $X_4(x)$:
+\begin{itemize}
+\item have rank 15 (exact);
+\item close under all $\binom{15}{2}=105$ commutators (exact);
+\item have Killing signature $(9,6,0)$ (exact).
+\end{itemize}
+Since 15 independent traceless $4\times4$ matrices span the full $\mathfrak{sl}(4,\mathbb{R})$, and the Killing signature confirms the split real form, this is $\mathfrak{sl}(4,\mathbb{R})$.
+\end{theorem}
+
+\noindent\textit{Proof script:} E88. \qed
+
+\section{Exact $\mathfrak{sl}(5,\mathbb{R})$}
+
+\begin{definition}[Block extension]
+\[
+X_5(x) =
+\begin{pmatrix}
+X_4(x) & v_4(x) \\
+v_4(x)^T & 0
+\end{pmatrix},
+\qquad
+v_4(x) =
+\begin{pmatrix}
+\sin(4x) \\
+\cos(4x) \\
+0 \\
+0
+\end{pmatrix},
+\]
+where $\sin(4x)=8S_2C_2$ and $\cos(4x)=C_2^2-16S_2^2$ with $S_2=\sin(2x)/4$, $C_2=\cos(2x)$.
+\end{definition}
+
+\begin{theorem}[PROVED]
+Twenty-four exact traceless $5\times5$ matrices from $X_5(x)$:
+\begin{itemize}
+\item have rank 24 (exact);
+\item close under all $\binom{24}{2}=276$ commutators (exact);
+\item have Killing signature $(14,10,0)$ (exact).
+\end{itemize}
+Therefore they span $\mathfrak{sl}(5,\mathbb{R})$.
+\end{theorem}
+
+\noindent\textit{Proof scripts:} E90b (rank+closure), E90c (Killing). \qed
+
+\section{The $\mathfrak{sl}(6)$ boundary}
+
+\begin{definition}[Block extension]
+\[
+X_6(x) =
+\begin{pmatrix}
+X_5(x) & v_5(x) \\
+v_5(x)^T & 0
+\end{pmatrix},
+\qquad
+v_5(x) =
+\begin{pmatrix}
+\sin(8x) \\
+\cos(8x) \\
+0 \\
+0 \\
+0
+\end{pmatrix}.
+\]
+\end{definition}
+
+\begin{theorem}[PROVED]
+Thirty-five exact traceless $6\times6$ matrices from $X_6(x)$:
+\begin{itemize}
+\item have rank 35 (exact);
+\item close under all $\binom{35}{2}=595$ commutators (exact).
+\end{itemize}
+Therefore they form a 35-dimensional Lie algebra.
+\end{theorem}
+
+\noindent\textit{Proof script:} E91. \qed
+
+\begin{theorem}[CHECKED, negative]
+The numeric Killing signature of this 35-dimensional Lie algebra is $(18,17,0)$, not $(20,15,0)$. Therefore it is \textbf{not} $\mathfrak{sl}(6,\mathbb{R})$.
+\end{theorem}
+
+\noindent\textit{Computation:} E92c (numeric, float). The exact $35\times35$ Killing over $\overline{\mathbb{Q}}$ was computationally infeasible. The numeric signature $(18,17,0)$ is non-degenerate (semisimple) but does not match the split form. Status: CHECKED (numeric), not PROVED. \qed
+
+\begin{corollary}
+The exact block-extension ladder terminates at $\mathfrak{sl}(5,\mathbb{R})$. The 35-dimensional algebra exists but is not identified as $\mathfrak{sl}(6,\mathbb{R})$.
+\end{corollary}
+
+\section{Scope and limitations}
+
+\begin{itemize}
+\item \textbf{PROVED:} $\mathfrak{sl}(3,\mathbb{R})$, $\mathfrak{sl}(4,\mathbb{R})$, $\mathfrak{sl}(5,\mathbb{R})$ via exact rank, closure, Killing signature. The 35-dim Lie algebra via exact rank and closure.
+\item \textbf{CHECKED:} Double-angle identities (numeric). The $(18,17,0)$ signature (numeric).
+\item \textbf{ASSERTED:} None in this paper.
+\item \textbf{OPEN:} Analytic proof of the double-angle identities. Identification of the 35-dim algebra. Whether a different construction yields $\mathfrak{sl}(6,\mathbb{R})$.
+\end{itemize}
+
+No physical labels (space, time, force, particle) are assigned. No connection to $E_8$ or M-theory is claimed. The $A$-series ladder is classical Lie theory; it does not derive exceptional algebras.
+
+\section{Proof scripts}
+
+All scripts at \url{https://github.com/kitcosby/geometry-first/tree/main/proofs}:
+\begin{itemize}
+\item E70, E71, E72: $\mathfrak{sl}(3,\mathbb{R})$.
+\item E88: $\mathfrak{sl}(4,\mathbb{R})$.
+\item E90b, E90c: $\mathfrak{sl}(5,\mathbb{R})$.
+\item E91: 35-dim Lie algebra (rank+closure).
+\item E92c: numeric Killing $(18,17,0)$.
+\end{itemize}
+
+\end{document}

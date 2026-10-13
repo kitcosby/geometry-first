@@ -29,6 +29,7 @@ type
     FStatement: string;
     FStatus: TProofStatus;
     FProofSource: string;
+    FScopeLabel: string;
   public
     constructor Create(const AId, AStatement: string;
       AStatus: TProofStatus; const AProofSource: string); virtual;
@@ -36,6 +37,12 @@ type
     property Statement: string read FStatement;
     property Status: TProofStatus read FStatus;
     property ProofSource: string read FProofSource;
+    { Optional exact scope text for mixed-scope entries (e.g. the Lie
+      campaign's PROVED/CHECKED splits). When set, Describe shows this
+      verbatim instead of the single Status name -- no rounding a
+      mixed label up or down to one word. Status remains the entry's
+      headline label for counting. }
+    property ScopeLabel: string read FScopeLabel write FScopeLabel;
     function StatusName: string;
     function Describe: string; virtual;
     { For objects whose claim can be re-checked numerically in Pascal
@@ -82,9 +89,15 @@ begin
 end;
 
 function TProofObject.Describe: string;
+var
+  Lbl: string;
 begin
+  if FScopeLabel <> '' then
+    Lbl := FScopeLabel
+  else
+    Lbl := StatusName;
   Result := Format('%s [%s] %s  (proof: %s)',
-    [FId, StatusName, FStatement, FProofSource]);
+    [FId, Lbl, FStatement, FProofSource]);
 end;
 
 function TProofObject.VerifyNumeric(out ADetail: string): Boolean;

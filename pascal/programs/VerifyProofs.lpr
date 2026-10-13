@@ -3,12 +3,13 @@ program VerifyProofs;
 { Geometry-first Pascal layer -- console verifier. (v2)
 
   1. Builds the proof registry (one Pascal object per theorems/INDEX.md
-     entry, pre-Lie sections + the Lie campaign section) and prints it
-     with its scope labels.
-  2. Runs the numerically verifiable proof objects (RTheory.Verify and
-     RTheory.LieVerify) over the eight octant midpoints, including
-     numeric Lie-closure checks (sl(8) dim 63, so(9) dim 36, sl(3)
-     families, sl(2) block).
+     entry, pre-Lie sections + the Lie campaign section + the wall
+     section of docs/WALL.md) and prints it with its scope labels.
+  2. Runs the numerically verifiable proof objects (RTheory.Verify,
+     RTheory.LieVerify and RTheory.WallVerify) over the eight octant
+     midpoints, including numeric Lie-closure checks (sl(8) dim 63,
+     so(9) dim 36, sl(3) families, sl(2) block) and the wall probes
+     (chain stall dim 10, Wick block closure dim 56, commutant dim 1).
   3. Exits 0 iff every verifiable object passes.
 
   Build (Free Pascal):
@@ -21,7 +22,8 @@ program VerifyProofs;
 
 uses
   SysUtils, RTheory.Types, RTheory.Operators, RTheory.Theorems,
-  RTheory.Verify, RTheory.Lie, RTheory.LieVerify;
+  RTheory.Verify, RTheory.Lie, RTheory.LieVerify,
+  RTheory.Wall, RTheory.WallVerify;
 
 var
   Registry: TProofRegistry;
@@ -35,6 +37,7 @@ begin
   try
     RegisterAllProofs(Registry);
     RegisterLieCampaign(Registry);
+    RegisterWall(Registry);
     WriteLn('=== Proof registry (theorems/INDEX.md as Pascal objects) ===');
     for I := 0 to Registry.Count - 1 do
       WriteLn(Registry[I].Describe);
@@ -60,7 +63,7 @@ begin
     WriteLn;
 
     WriteLn('=== Numeric verification (CHECKED-strength confirmation) ===');
-    SetLength(Checks, 25);
+    SetLength(Checks, 28);
     Checks[0] := NewRecipProof;
     Checks[1] := NewFlip1Proof;
     Checks[2] := NewFlip2Proof;
@@ -93,6 +96,10 @@ begin
     Checks[22] := TDeltasProof.Create;
     Checks[23] := TXFamProof.Create;
     Checks[24] := TSo3ThetaProof.Create;
+    { Wall probes (RTheory.WallVerify) }
+    Checks[25] := TWallChain4Proof.Create;
+    Checks[26] := TWallWickProof.Create;
+    Checks[27] := TWallCommutantProof.Create;
 
     Failures := 0;
     for I := 0 to High(Checks) do

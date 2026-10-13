@@ -1,11 +1,14 @@
 program VerifyProofs;
 
-{ Geometry-first Pascal layer -- console verifier.
+{ Geometry-first Pascal layer -- console verifier. (v2)
 
   1. Builds the proof registry (one Pascal object per theorems/INDEX.md
-     entry) and prints it with its scope labels.
-  2. Runs the numerically verifiable proof objects (RTheory.Verify)
-     over the eight octant midpoints.
+     entry, pre-Lie sections + the Lie campaign section) and prints it
+     with its scope labels.
+  2. Runs the numerically verifiable proof objects (RTheory.Verify and
+     RTheory.LieVerify) over the eight octant midpoints, including
+     numeric Lie-closure checks (sl(8) dim 63, so(9) dim 36, sl(3)
+     families, sl(2) block).
   3. Exits 0 iff every verifiable object passes.
 
   Build (Free Pascal):
@@ -18,7 +21,7 @@ program VerifyProofs;
 
 uses
   SysUtils, RTheory.Types, RTheory.Operators, RTheory.Theorems,
-  RTheory.Verify;
+  RTheory.Verify, RTheory.Lie, RTheory.LieVerify;
 
 var
   Registry: TProofRegistry;
@@ -31,12 +34,17 @@ begin
   Registry := TProofRegistry.Create;
   try
     RegisterAllProofs(Registry);
+    RegisterLieCampaign(Registry);
     WriteLn('=== Proof registry (theorems/INDEX.md as Pascal objects) ===');
     for I := 0 to Registry.Count - 1 do
       WriteLn(Registry[I].Describe);
-    WriteLn(Format('Total: %d objects; PROVED: %d; STRONG-EVIDENCE: %d',
+    WriteLn(Format('Total: %d objects; PROVED: %d; STRONG-EVIDENCE: %d; ASSERTED: %d; OPEN: %d',
       [Registry.Count, Registry.CountByStatus(psProved),
-       Registry.CountByStatus(psStrongEvidence)]));
+       Registry.CountByStatus(psStrongEvidence),
+       Registry.CountByStatus(psAsserted),
+       Registry.CountByStatus(psOpen)]));
+    WriteLn('PROVED count includes mixed-scope entries whose exact split');
+    WriteLn('(e.g. PROVED/CHECKED) is carried verbatim in their scope label.');
     WriteLn;
 
     WriteLn('=== Operator snapshot at x = pi/8 (octant 0 midpoint) ===');
@@ -52,7 +60,7 @@ begin
     WriteLn;
 
     WriteLn('=== Numeric verification (CHECKED-strength confirmation) ===');
-    SetLength(Checks, 15);
+    SetLength(Checks, 25);
     Checks[0] := NewRecipProof;
     Checks[1] := NewFlip1Proof;
     Checks[2] := NewFlip2Proof;
@@ -74,6 +82,17 @@ begin
     Checks[14] := THarmProof.Create('HARM',
       'F = (sin 2x / 4, cos 2x / 2), dF/dx = [[0,1],[-4,0]] * F',
       psProved, 'trig');
+    { Lie campaign verifiable objects }
+    Checks[15] := TCycleSl8Proof.Create;
+    Checks[16] := TSo9PathProof.Create;
+    Checks[17] := TTaFamilyProof.Create;
+    Checks[18] := TE106Proof.Create;
+    Checks[19] := TE107Proof.Create;
+    Checks[20] := TCycProdProof.Create;
+    Checks[21] := TM1M2ScalarProof.Create;
+    Checks[22] := TDeltasProof.Create;
+    Checks[23] := TXFamProof.Create;
+    Checks[24] := TSo3ThetaProof.Create;
 
     Failures := 0;
     for I := 0 to High(Checks) do

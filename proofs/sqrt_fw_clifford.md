@@ -189,3 +189,74 @@ lemma; swaps confirmed by exact evaluation). §7 VERIFIED exactly on
 the finite sector models; the non-closure is exact arithmetic. No
 identification with $z'$, the Result-12 twist, or any $Cl(4,4)$
 structure is claimed; WALL-FERMION unchanged.
+
+## Addendum 2026-10-15 (II) — the 8x level
+
+### 8. The fourth root, the order-8 pseudoscalar, and the binary tower
+
+Let $F_8 = FW(8x) = \operatorname{sgn}(\sin 16x)$: 32 sectors of
+width $\pi/16$ around the circle, $F_8 = (-1)^j$ on sector $j$. All
+statements below VERIFIED exactly on the 32-sector model.
+
+**Root tower at a single argument.** With $\zeta = e^{i\pi/4}$,
+the accumulated roots are
+
+$$G_8(j) = i^j, \qquad Q_8(j) = \zeta^j, \qquad
+Q_8^2 = G_8, \quad G_8^2 = F_8, \quad Q_8^4 = F_8.$$
+
+So at the $8x$ level the **fourth root is canonical** (same
+accumulation rule as $g$, one level higher): $Q_8$ has period
+8 sectors $= \pi/2$ and antiperiod $\pi/4$, with values in $\mu_8$.
+(The value group $\mu_8$ is also the spectrum of the sl(8) cycle
+matrix, PROVED $x$-independent — recorded here as a shared
+order-8 cyclic structure, not an identification.) The sector-step
+transport is a Weyl pair: $U Q_8 U^{-1} = \zeta^{-1} Q_8$, and the
+antiperiod transport anticommutes with $Q_8$:
+$\{\text{shift}_4, Q_8\} = 0$.
+
+**The pseudoscalar has order 8.** $J_8 = \text{shift}_4 \cdot Q_8$
+satisfies
+
+$$J_8^2 = -\,(\pi/2\text{-transport}) \cdot G_8, \qquad
+J_8^4 = S \cdot M_{F_8}, \qquad J_8^8 = I,$$
+
+with $S$ the $\pi$-transport. Against §2 ($J^2 = -M_{FW}$, order 4)
+and the intermediate $2x$ case (computed 2026-10-15, session record:
+$J_2^2 = -S \cdot M_{FW(2x)}$, order 4), the pattern is that each
+level's $J^2$ is dressed by the level below: bare sign, then
+transport × sign, then transport × phase.
+
+**The bits are binary coordinates.** At the 32 sector centers,
+$(FW(x), FW(2x), FW(4x), FW(8x))$ are exactly the binary digits of
+the sector index: the FlatWave doubling tower is a complete binary
+coordinate system on the circle (the Rademacher system), one bit of
+position per doubling.
+
+**The 1820 ε-pattern is a Walsh product of the first two bits.**
+The 1820 lift's octant ε-pattern
+$\{-1, +1, +1, -1, -1, +1, +1, -1\}$ (RUN143) equals, per octant,
+
+$$\varepsilon_{1820}(k) = -\,FW(x)\cdot FW(2x)\Big|_{\text{octant } k}
+\quad \text{exactly, all 8 octants.}$$
+
+Pattern-level identity only: the chart-level branch Möbius and the
+1820's $M_\varepsilon$ lift remain distinct structures (RUN143's
+anti-conflation datum stands); their sign patterns are related by
+this product.
+
+**Refinement of §4.2's wording.** The $\mu_8$ accumulation root of
+$FW$ itself (period $4\pi$) is likewise canonical up to conjugation;
+what fails is only its identification with Result 12's twist — same
+$2\pi$ holonomy $-1$, but phase-valued within the lap, where the
+record's twist keeps components real and negates across laps.
+
+*Disclosure:* the raw check $\{\text{shift}_4, Q_8\} = 0$ first
+printed False under sympy structural equality on $e^{i\pi/4}$
+powers; rerun with $\zeta$ in algebraic form confirms exactly 0
+(presentation-layer artifact, the math was re-verified, not
+assumed).
+
+Scope: finite-model VERIFIED as stated; the binary-digit and
+Walsh-product identities are exact finite arithmetic on PROVED sign
+patterns. No identification of $Q_8$ with the sl(8) cycle, the 1820
+lift, or any spinor structure is claimed.

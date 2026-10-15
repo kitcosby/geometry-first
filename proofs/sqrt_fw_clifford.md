@@ -426,3 +426,56 @@ does for the cover tower what the circle did for the line.
 Scope: finite levels VERIFIED as stated; the limit objects are
 the standard constructions on that verified data. No physical
 identification is claimed for either limit object.
+
+## Addendum 2026-10-15 (VI) — the eighth root at 8x
+
+### 13. FW(8x)^{1/8} and the commutator decay law (VERIFIED)
+
+On the 32-sector model, $R(j) = \xi^j$ with $\xi = e^{i\pi/8}$
+completes the tower at the 8x argument:
+
+$$R^2 = Q_8, \qquad R^4 = G_8, \qquad R^8 = FW(8x),$$
+
+values in $\mu_{16}$: the full chain
+$\mu_2 \leftarrow \mu_4 \leftarrow \mu_8 \leftarrow \mu_{16}$ at
+a single argument. $\{\mathrm{shift}_8, R\} = 0$
+($\mathrm{shift}_8$ = $\pi/2$-transport, the antiperiod); the
+pseudoscalar $J_R = \mathrm{shift}_8 \cdot R$ satisfies
+$J_R^2 = -S \cdot M_{Q_8}$ and has order exactly **16**; the
+generated group has order 64.
+
+**The diagonal fact.** $R$ has period 16 sectors $= \pi$ — the
+operator period itself. In general $FW(2^k x)^{1/2^k}$ is always
+$\pi$-periodic (root order $2^k$ times base period $\pi/2^k$):
+along the diagonal of the (doubling $\times$ root) table the
+roots live on the same circle as the operators, with no cover
+extension. Covers grow only when the root is raised at fixed
+argument (§§1, 10, 12).
+
+**Commutator decay law.** The per-step commutator size for a
+root of order $n$ is $|1 - e^{i\pi/n}| = 2\sin(\pi/2n)$:
+
+| $n$ | size |
+|---|---|
+| 2 | $\sqrt 2$ |
+| 3 | $1$ |
+| 4 | $2\sin(\pi/8) \approx 0.765$ |
+| 8 | $2\sin(\pi/16) \approx 0.390$ |
+
+Nonzero at every finite level, decaying geometrically to $0$.
+The tower's noncommutativity is therefore a finite-level
+quantity with an exact decay law, and the inverse limit of §12
+(the solenoid) is the classical level of the tower: its leaves
+are where the commutators have faded out.
+
+Disclosure: at the matrix level, sympy's simplification returned
+False for $R^2 = Q_8$, $R^4 = G_8$ and $\xi^4 = i$ in trig form
+(nested-radical denesting, the same presentation failure as §8).
+The identities are closed exactly through the radical chain
+$\xi^2 = \zeta_8$ (verified), $\zeta_8^2 = i$ (verified), plus
+exponent laws; $R^4 = G_8$ is additionally confirmed numerically
+to 160 digits on all 32 entries (max deviation $2.8 \times
+10^{-160}$).
+
+Scope: VERIFIED on the finite sector model as stated. No new
+identifications claimed.

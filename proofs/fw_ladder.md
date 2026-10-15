@@ -146,3 +146,30 @@ Each rung was executed as the two-line prefix `KIND = '<FW|DA>'`,
 (stdin mode) on the laptop WSL `lampy` distro. The file ends with a
 top-level `main()` call (required: a piped Sage script whose last
 statement is a compound block may silently never execute it).
+
+## Addendum 2026-10-15 — extension to n = 9 and n = 10
+
+At Kit's order, the ladder was extended by two rungs. Same
+script (`proofs/fw_ladder.py`), same 10 samples, same method and
+identification criteria as §§1–6; the run configuration is the
+two-line prefix of §8 with `N = 9` and `N = 10`. All four rungs
+PROVED (exact closure over QQbar):
+
+| n | Variant | Sample span | Closure | Killing (pos, neg, zero) |
+|---|---|---|---|---|
+| 9 | FW | 7 | **80** | (44, 36, 0) |
+| 9 | DA | 7 | **80** | (44, 36, 0) |
+| 10 | FW | 7 | **99** | (54, 45, 0) |
+| 10 | DA | 7 | **99** | (54, 45, 0) |
+
+Every closure equals $n^2 - 1$, every closure basis is entirely
+traceless, and every Killing signature equals the split form
+$\big(\tfrac{n^2+n-2}{2}, \tfrac{n^2-n}{2}, 0\big)$ exactly.
+Run times 103–221 s per rung.
+
+The ladder now stands at **n = 3..10 for both variants (16
+rungs), all PROVED**: both diagonal families generate
+$\mathfrak{sl}(n,\mathbb{R})$ at every rung through
+$\mathfrak{sl}(10,\mathbb{R})$. Scope unchanged from §1: the two
+specific diagonals only — the universal E104 statement stays
+OPEN, and no claim is made for $n > 10$.

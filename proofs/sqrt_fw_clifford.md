@@ -260,3 +260,71 @@ Scope: finite-model VERIFIED as stated; the binary-digit and
 Walsh-product identities are exact finite arithmetic on PROVED sign
 patterns. No identification of $Q_8$ with the sl(8) cycle, the 1820
 lift, or any spinor structure is claimed.
+
+## Addendum 2026-10-15 (III) — the 2x square root, and FW^{1/4}
+
+### 9. The 2x square root (VERIFIED)
+
+$F_2 := FW(2x) = \operatorname{sgn}(\sin 4x) = (-1)^k$ per octant.
+$F_2$ is the **saw-dominance sign**: $F_2 = +1$ exactly where
+$|sawdown| > |sawup|$ (exact at all 8 octant midpoints; the ties at
+the $45^\circ$ points are its zeros). Hence the complete octant
+label mod $\pi$ is $(FW(x), FW(2x))$ — both entries FlatWaves.
+
+The square root interlocks with doubling:
+$\sqrt{FW(2x)} = g(2x)$ (substitution: $(g \circ 2)^2 = FW \circ 2$;
+confirmed at 8 exact interior points). Per octant $H_2$ has values
+$i^k$; period $\pi$, antiperiod $\pi/2$. The octant-step transport
+is a Weyl pair, $T_8 H_2 T_8^{-1} = i^{-1} H_2$, and with $A$ the
+$\pi/2$-transport, $\{A, H_2\} = 0$, $[A, H_2] = 2 A H_2 \neq 0$.
+
+Contrast with §2: the pseudoscalar $J_2 = A H_2$ has
+
+$$J_2^2 = -\,S \cdot M_{F_2}, \qquad J_2^4 = I,$$
+
+$S$ the $\pi$-transport. The clean sector complex structure
+$J^2 = -M_{FW}$ is special to the $1x$ root; at $2x$ the square is
+the doubled sign dressed with the $\pi$-transport. (This is the
+intermediate case cited in §8.)
+
+### 10. The fourth root FW^{1/4} (VERIFIED)
+
+On the $4\pi$ lap (8 quadrant cells), with $\zeta = e^{i\pi/4}$,
+the accumulated fourth root is $q(k) = \zeta^k$ (conjugate branch
+$\bar q$). Verified exactly on the lap model:
+
+- **Tower:** $M_q^2 = M_g$, $M_q^4 = M_{FW}$ — $q$ squares to the
+  square root and fourth-powers to the FlatWave, globally on the
+  lap. $q(x + 2\pi) = -q(x)$: period $4\pi$, antiperiod $2\pi$.
+- **Transport:** quarter-turn Weyl pair with the finest phase yet,
+  $T M_q T^{-1} = \zeta^{-1} M_q$; and with $\Lambda$ the
+  $2\pi$-transport, $\{\Lambda, M_q\} = 0$,
+  $[\Lambda, M_q] = 2\Lambda M_q \neq 0$.
+- **Pseudoscalar:** $J_q = \Lambda M_q$ satisfies
+  $J_q^2 = -M_g$ — the fourth root's pseudoscalar squares to
+  (minus) the *previous root*, where §2's squared to the sign
+  itself. $J_q^4 = M_{FW}$, $J_q^8 = I$: order 8, the same order
+  §8 reached by refining the argument instead of the root.
+- **Group:** $\langle \Lambda, M_q \rangle$ has order **32**
+  (exact enumeration on the $(a,b,c)$ normal forms
+  $\Lambda^a \cdot \mathrm{diag}(\zeta^{bk+c})$): a dicyclic-type
+  central extension, one level above the $Q_8$ pattern of §1.
+- **Reflection:** $q \mapsto \zeta^7 \bar q$, a fourth root of
+  $-FW$ — consistent with $FW$ being reflection-odd (§2's law for
+  $g$ is the level below).
+
+**Not the Result-12 twist.** $q \cdot \Psi_{\mathrm{prin}}$ obeys
+the twisted lap law $\Psi(x+2\pi) = -\Psi(x)$, but $q$ is
+phase-valued *within* the lap (factor $\zeta$ on QII), where the
+record's twist keeps first-lap components real and negates only
+across laps (the real lap-step $\tau = \pm 1$, $\tau^2 = 1$, while
+$q^2 = g \neq \tau$). Same holonomy, different object; the twist
+identification remains declined, as in §4.
+
+Remark: at fixed argument the root tower has periods
+$\pi \cdot 2^k$ and value groups $\mu_{2^{k+1}}$ — the 2-adic
+tower of covers of the operator circle.
+
+Scope: §§9–10 VERIFIED exactly on the finite sector/lap models
+from the PROVED sign patterns. No identification of $q$ with $z'$,
+the Result-12 twist, or any $Cl(4,4)$ structure is claimed.

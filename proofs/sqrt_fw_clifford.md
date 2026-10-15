@@ -129,3 +129,63 @@ The precise relations that DO hold:
 - NOT claimed: any identification of $g$ with $z'$ or with the
   Result-12 twist; any bearing on the Ansatz-4 obstruction, the
   $Cl(4,4)$ 16's origin, or WALL-FERMION (all unchanged).
+
+## Addendum 2026-10-15 — saw antiperiodicity and the cube root
+
+### 6. The saws are antiperiodic (PROVED)
+
+From the RUN144 branch lemma (PROVED), the quarter-turn swaps the
+primitive pairs:
+
+$$srx(x+\tfrac\pi2) = crx(x), \qquad cxp(x+\tfrac\pi2) = sxp(x)$$
+
+(verified exactly at the octant midpoints), and reciprocation gives
+the other two swaps. Hence both UNA differences negate:
+
+$$urx(x+\tfrac\pi2) = -urx(x), \qquad uxp(x+\tfrac\pi2) = -uxp(x),$$
+
+$$\boxed{\;sawup(x+\tfrac\pi2) = -sawup(x), \qquad
+sawdown(x+\tfrac\pi2) = -sawdown(x).\;}$$
+
+The saws are real-valued antiperiodic objects with antiperiod $\pi/2$
+— they do at the quarter-turn what $g$ does at the half-turn, with no
+$i$ imported. With $T$ = quarter-turn transport, $U$ = multiplication
+by $sawup$, $D$ = multiplication by $sawdown$:
+
+$$TU = -UT, \qquad TD = -DT, \qquad [T,U] = 2TU, \quad [T,D] = 2TD,$$
+
+both commutators nonzero. Factor bookkeeping: an anticommuting pair's
+commutator carries $|1 - (-1)| = 2$; and $U + D = M_{FW}$, whose
+values are exactly $\pm 1$. (Both saw commutators carry the 2; the
+$\pm 1$ is the FlatWave sum, not a per-saw split.)
+
+### 7. The cube root of the FlatWave (VERIFIED)
+
+Construction (Kit): adjust the sign's period if desired, then take
+the cube root. Let $\rho = e^{i\pi/3}$, so $\rho^3 = -1$ — the
+per-sector sign flip, cube-rooted. Set $h(\text{step } k) = \rho^k$.
+Verified exactly:
+
+- $h^3 = FW$ on the quadrant grid, and $h^3 = \operatorname{sgn}(\sin
+  8x)$ on the 16-sector grid of $FW(4x)$. The $4x$ adjustment rescales
+  the grid only; the root's structure is unchanged.
+- $h$ has period 6 steps: $3\pi$ — a **triple cover** (on the $4x$
+  grid, $3\pi/4$ over the $\pi/4$ base).
+- Transport is a Weyl clock-shift pair, $T H = \rho^{\pm 1} H T$, and
+  the commutator factor is $|1 - \rho| = 1$ **exactly**
+  ($\cos\frac\pi3 = \frac12$): the cube-root channel's commutator has
+  modulus 1, beside the square root's antipodal factor 2.
+- General pattern: the $n$-th root has per-step phase $e^{i\pi/n}
+  \neq 1$, so its transport commutator is automatically nonzero at
+  every order.
+- **Non-closure on the $4\pi$ lap (proved arithmetic):**
+  $\rho^8 = e^{2i\pi/3} \neq 1$ — the phase has order 6 and the $4\pi$
+  lap has 8 quadrant steps. The cube root's home is the triple cover,
+  a cover distinct from both the double cover ($2\pi$, §1) and the
+  Result-12 twist ($4\pi$).
+
+Scope of the addendum: §6 PROVED (derivation from the PROVED RUN144
+lemma; swaps confirmed by exact evaluation). §7 VERIFIED exactly on
+the finite sector models; the non-closure is exact arithmetic. No
+identification with $z'$, the Result-12 twist, or any $Cl(4,4)$
+structure is claimed; WALL-FERMION unchanged.

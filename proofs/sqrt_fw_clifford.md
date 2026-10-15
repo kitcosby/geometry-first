@@ -328,3 +328,46 @@ tower of covers of the operator circle.
 Scope: §§9–10 VERIFIED exactly on the finite sector/lap models
 from the PROVED sign patterns. No identification of $q$ with $z'$,
 the Result-12 twist, or any $Cl(4,4)$ structure is claimed.
+
+## Addendum 2026-10-15 (IV) — case study: FW^{3/2}
+
+### 11. One exponent, two objects (VERIFIED)
+
+The exponent $3/2$ splits into two different roots of the same
+square. All statements verified exactly on the octant model.
+
+**(a) The tower reading: $FW^{3/2} = \bar g$.** In the accumulated
+root tower, $FW^{3/2} := g^3 = \bar g = G^{-1}$ — the conjugate
+branch of §1, now identified as a power. It anticommutes with $S$,
+and its quarter-turn Weyl phase is $+i$, the opposite of $g$'s
+$-i$: **the two branches are the two phase signs.** Its
+pseudoscalar $\bar J = S \bar G$ satisfies
+
+$$\bar J^2 = -M_{FW}, \qquad \bar J = J \cdot M_{FW} \quad
+\text{exactly.}$$
+
+So the two branches' complex structures agree on the $FW = +1$
+sectors and differ by the central sign only on $FW = -1$ sectors:
+the branch stipulation is invisible to every squared quantity and
+to the whole Wick-relevant half of the circle (§2/WALL-CPLX
+discussion). Reflection exchanges the powers:
+$R \bar G R^{-1} = +i\,G$, alongside §2's $R G R^{-1} = -i\,\bar G$.
+
+**(b) The pointwise principal power: a tamer root.** Pointwise
+principal values $(+1)^{3/2} = 1$, $(-1)^{3/2} = -i$ give a square
+root of $FW$ that factors through $FW$ alone. It is $\pi$-periodic,
+it **commutes** with $S$, and under the quarter-turn it transports
+by the quadrant-dependent phase $-i \cdot FW(x)$ rather than a
+scalar — no Weyl covariance, hence no Clifford pair and no cover,
+despite squaring to the same $FW$.
+
+**Moral.** The exponent does not determine the object; the
+transport law does. Every structural feature of the tower
+(anticommutation, Clifford pair, complex structure) came from
+requiring the root to transport by a constant phase. The branch
+choice tracked through §§1–10 is not a choice of values but of
+transport covariance, and $FW^{3/2}$ is the case where the two
+readings visibly part.
+
+Scope: VERIFIED exactly on the octant model from the PROVED sign
+patterns. No new identifications claimed.

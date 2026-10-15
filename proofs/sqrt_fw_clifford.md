@@ -479,3 +479,41 @@ to 160 digits on all 32 entries (max deviation $2.8 \times
 
 Scope: VERIFIED on the finite sector model as stated. No new
 identifications claimed.
+
+## Addendum 2026-10-15 (VII) — the exponential of the pseudoscalar
+
+### 14. exp(θJ): rotations on FW = +1, boosts on FW = −1
+
+For the Clifford pair of §2 ($J = SG$, $J^2 = -M_{FW}$, with
+$M_{FW}$ central), the exponential closes in form. The power
+series splits into even and odd parts with coefficients in the
+central $M_{FW}$:
+
+$$\exp(\theta J) = A(\theta) + J\,B(\theta),$$
+
+where $A, B$ are diagonal (multiplication operators): on
+$FW = +1$ sectors $A = \cos\theta$, $B = \sin\theta$; on
+$FW = -1$ sectors $A = \cosh\theta$, $B = \sinh\theta$. (PROVED
+by the series and the centrality of $M_{FW}$; the quadrant-model
+instance is verified exactly against the matrix exponential at
+$\theta = 0.7$, agreement to $10^{-165}$.)
+
+So the single generator $J$ exponentiates to a **rotation**
+group on the $FW = +1$ sectors and a **boost** group on the
+$FW = -1$ sectors: the $\mathrm{Cl}(2,0)$ / $\mathrm{Cl}(1,1)$
+sector split of §2 at the group level, and the compact /
+noncompact dichotomy of the Wick discussion (§2 and the
+2026-10-15 Wick examination) as one explicit exponential,
+selected sector-by-sector by the FlatWave sign.
+
+The companion computation on the 1820 side — the flow
+$U(t) = \exp(itK)$ through $\Gamma$ and $M_\varepsilon$, with
+$K$ the angle operator of the lifted root — is filed in the
+Volume I audit workspace (`io_word_sweep/
+EPS_ALIGNMENT_GAMMA_ROOT.md` §6): $U(1) = \Gamma$,
+$U(2) = M_\varepsilon$, $U(4) = I$, CHECKED on the archived
+matrices.
+
+Scope: the closed form is PROVED as stated; its 1820 companion
+is CHECKED (float residuals $\leq 4 \times 10^{-15}$). No new
+identifications claimed.

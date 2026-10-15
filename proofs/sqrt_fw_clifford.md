@@ -371,3 +371,58 @@ readings visibly part.
 
 Scope: VERIFIED exactly on the octant model from the PROVED sign
 patterns. No new identifications claimed.
+
+## Addendum 2026-10-15 (V) — compactification of the root tower
+
+### 12. The inverse limit: solenoid and 2-adic choice fiber
+
+The tower of laps (periods $\pi \cdot 2^k$) and roots can be
+assembled into single compact objects. The finite levels are
+VERIFIED exactly (integer exponent arithmetic); the limits are the
+standard inverse-limit constructions applied to that data.
+
+**Finite levels.** On the quadrant-step grid, the
+transport-covariant roots of $FW$ are $r(j) = \zeta^{a + bj}$:
+level 1 (values in $\mu_4$) has exactly **4** roots
+($a \in \{0,2\}$, $b \in \{1,3\}$ — these are $\pm g, \pm \bar g$);
+level 2 (values in $\mu_8$) has exactly **16**
+($a$ even, $b$ odd). The squaring projection from level 2 to
+level 1 is surjective with constant fiber 4, and the ratio
+(ambiguity) groups are $\mathbb Z_2 \times \mathbb Z_2$ at
+level 1 and $\mathbb Z_4 \times \mathbb Z_4$ at level 2 — the
+level-$k$ choice torsor is under $\mu_{2^k} \times \mu_{2^k}$.
+
+**Space side.** The laps with their halving projections form an
+inverse system of circles; its limit is the **dyadic solenoid**,
+which is compact. The roots are compatible across projections
+($q^2 = g$, §10; $g^2 = FW$, §1), so the tower's data assembles
+into objects on the limit, and §8's binary bits are exactly the
+limit's coordinates: a point is a base angle plus a 2-adic digit
+stream.
+
+**Choice side.** The inverse limit of the choice tower is the
+compact profinite group $\mathbb Z_2 \times \mathbb Z_2$. The
+branch stipulation of §§1–11 becomes a point of this group:
+$FW^{1/2}$ and $FW^{3/2}$ (§11) are two points differing in the
+first digit.
+
+**Limits of the compactification.** The solenoid is compact and
+connected but not a manifold and not path-connected; there is no
+global smooth flow on it — continuous transport lives on dense
+$\mathbb R$-leaves. Compactification therefore *packages* the
+flow obstruction (as a leaf structure) rather than removing it.
+The cube root's degree-3 tower (§7) compactifies to a different
+(3-adic) solenoid; the two towers meet at degree 6 (the Weyl
+cover of §7), and a joint compactification is the universal
+solenoid.
+
+**Precedent inside the theory.** This is the second
+compactification, not the first: the Gudermannian already wraps
+the non-compact rapidity line $\eta \in \mathbb R$ onto the
+compact operator circle, where the operators live meromorphically
+with the H5 residues $\pm 2$ (PROVED) as seam data. The solenoid
+does for the cover tower what the circle did for the line.
+
+Scope: finite levels VERIFIED as stated; the limit objects are
+the standard constructions on that verified data. No physical
+identification is claimed for either limit object.

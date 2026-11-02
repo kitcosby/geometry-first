@@ -158,6 +158,48 @@ begin
     'Sampled-minimal-chain wall: the chain reusing the same 2 functions in overlapping sl(2) positions stalls at rank 10 of 15 for sl(4) -- with 4 samples (E108), 8 samples (E109), and Re/Im complex variants (E110) -- because the sampled matrices live in a 4-dim function space (E103). The cycle construction bypasses this wall entirely. NOT a general sl(n) wall',
     'dependency graph E108-E110');
 
+  { Orthogonal ladder so(3)..so(10) + spinors, and the trig transfer
+    cross-check -- all PROVED 2026-10-13 (Sage 9.5 exact over QQbar,
+    proof files in proofs/). Registry objects only: no Pascal numeric
+    checks are added for these -- the exact Sage computations are the
+    proof of record, and a numeric PASS here would be CHECKED-strength
+    only. WALL-SO8 (in RTheory.Wall) already carries the so(8)
+    operator-causation no-go; SO8-TRIALITY below carries the algebra
+    result itself. }
+  P('SO10PATH',
+    'Orthogonal ladder top: the antisymmetric path extended to 10 vertices, Y_i = f_i*(E_{i,i+1} - E_{i+1,i}), i = 1..9, weights the eight operators plus FlatWave as ninth edge, generates so(10), dim 45, type D5, rank 5; first 8 edges alone close at dim 36 (so(9) nested). Kit''s so(9) induction is length-generic (any path length, any nonzero weights)',
+    'proofs/so10_path.md');
+  P('SPIN10-SPINOR',
+    'Spin(10) spinor representation: Cl(10) by Pauli recursion (ten 32x32 gamma matrices, entries in {0,+/-1,+/-i}); Sigma_ab = (1/4)[gamma_a,gamma_b] rank 45; rho a Lie homomorphism on all 990 basis pairs; chirality Gamma = i*gamma_1...gamma_10 splits Dirac 32 = 16 + 16'' (Weyl); rho(Y_i) = (f_i/2)*gamma_i*gamma_{i+1} block-diagonal with nonzero 16-blocks',
+    'proofs/spin10_spinor.md');
+  P('SO9-SPINOR',
+    'so(9) spinor (ladder gap closed): Cl(9) Sigma rank 36, homomorphism on all 630 basis pairs; volume split 16+16, each block rank 36; unique invariant symmetric form on the 16 (real type); Casimir vector -8 vs spinor -9 (order swapped past the n=8 crossing)',
+    'proofs/so9_spinor.md');
+  P('SO8-TRIALITY',
+    'so(8): path closes at dim 28 (D4); Cl(8) spinors split 16 = 8_s + 8_c, homomorphism on 378 pairs; triality Casimir test -- vector -(n-1), spinor -n(n-1)/8, equal iff n = 8, and all three 8-dim reps give exactly -7*I_8. Two-sided verdict: so(8) specialness CONFIRMED as D4 algebra; any claim the operators MAKE so(8) special is FALSIFIED (nonzero weights only -- see WALL-SO8)',
+    'proofs/so8_triality.md');
+  P('SO7-SPINOR',
+    'so(7): path closes at dim 21; spinor 8 carries a unique invariant symmetric form (real type); Casimir vector -6 vs spinor -21/4 (unequal)',
+    'proofs/so7_so4_so3.md');
+  P('SO6-SU4',
+    'so(6): path closes at dim 15; Cl(6) spinor 4-block is traceless anti-Hermitian of rank 15 inside su(4), so so(6) = su(4) realized via the spinor 4; Casimir vector -5 vs spinor -15/4 (unequal)',
+    'proofs/so6_so5.md');
+  P('SO5-SP4',
+    'so(5): path closes at dim 10; volume split 4+4, each block rank 10 carrying a unique invertible invariant symplectic form J, so so(5) = sp(4) realized; Casimir vector -4 vs spinor -5/2 (unequal)',
+    'proofs/so6_so5.md');
+  P('SO4-SPLIT',
+    'so(4): path closes at dim 6; Hodge-star split 3+3 with [+,-] = 0 exactly gives so(3) + so(3); spinor factorisation (2,1) + (1,2) verified blockwise. Disclosed correction: first chirality used Gamma = i*omega (right at n=6,10; wrong at n=4 where omega^2 = +1, empty eigenspaces) -- corrected to Gamma = omega',
+    'proofs/so7_so4_so3.md');
+  P('SO3-SU2',
+    'so(3): path closes at dim 3; spinor image = su(2) (Pauli matrices, Sigma rank 3, traceless anti-Hermitian). Ladder so(3)..so(10) complete, algebras and spinors, all PROVED; Casimir coincidence of the fundamental reps occurs only at n=8',
+    'proofs/so7_so4_so3.md');
+  P('XFER-MIX',
+    'Trig transfer cross-checked exactly (t = tan(x/2) normal forms, all four quadrants): 2x2 mix M = [[srx,cxp],[sxp,crx]] with det M = srx/cxp - cxp/srx; FlatWave Cartan extension A with det A = urx/2 and twin A-tilde with det = uxp/2; tr(A*A-tilde) = (urx*uxp)/2 = 2*|csc 2x|; det N = -(urx^2/4 + sxp*cxp) < 0 (N always hyperbolic); S6 inverse formulas and S7 saw dictionary verified. Transfer S8 disclaimer accurate: no new Lie algebra -- coordinatization and invariants only',
+    'proofs/transfer_2026-10-13_crosscheck.md; proofs/transfer_mix_2026-10-13.md');
+  P('XFER-DETB',
+    'det B /= 0 PROVED (promoted from the transfer''s 1600-point scan CHECKED status): per-quadrant det B(t) numerator is (t^2+1) x quartic, exact Sturm count 0 roots in each quadrant t-range, quartics manifestly positive in range; det B signs by quadrant +, +, -, +. Hence B^{-1} exists on the whole domain',
+    'proofs/transfer_2026-10-13_crosscheck.md');
+
   { Explicitly not theorems }
   ARegistry.Add(TProofObject.Create('MAXWELL-DICT',
     'Maxwell exercise: operator identities PROVED; the E/B identification is a declared dictionary; Maxwell''s equations as spacetime PDEs are NOT derived. A representation witness only',

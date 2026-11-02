@@ -5,11 +5,20 @@ program VerifyProofs;
   1. Builds the proof registry (one Pascal object per theorems/INDEX.md
      entry, pre-Lie sections + the Lie campaign section + the wall
      section of docs/WALL.md) and prints it with its scope labels.
-  2. Runs the numerically verifiable proof objects (RTheory.Verify,
+  2. Runs the verifiable proof objects (RTheory.Verify,
      RTheory.LieVerify and RTheory.WallVerify) over the eight octant
      midpoints, including numeric Lie-closure checks (sl(8) dim 63,
      so(9) dim 36, sl(3) families, sl(2) block) and the wall probes
-     (chain stall dim 10, Wick block closure dim 56, commutant dim 1).
+     (chain stall dim 10, Wick block closure dim 56, commutant dim 1),
+     plus the EXACT ports (RTheory.ExactLie): zero-residual
+     re-derivations of e70/e71/e72 in Q(sqrt(2), sqrt(3)), and the
+     batch-2 exact ports (RTheory.ExactClifford, RTheory.ExactQt):
+     q4/d2/d3b over Q and the m_refined/maxwell/entropy identities
+     over Q(sqrt(2), sqrt(3)) and Q(t). Three further converted
+     objects (T2-EXACT, T3-EXACT, QFLIP-EXACT) are deliberately NOT
+     in this pass/fail gate: their verdicts are findings (see
+     pascal/CONVERSION.md batch 2) and they are exercised by the
+     standalone batch test programs.
   3. Exits 0 iff every verifiable object passes.
 
   Build (Free Pascal):
@@ -23,7 +32,10 @@ program VerifyProofs;
 uses
   SysUtils, RTheory.Types, RTheory.Operators, RTheory.Theorems,
   RTheory.Verify, RTheory.Lie, RTheory.LieVerify,
-  RTheory.Wall, RTheory.WallVerify;
+  RTheory.Wall, RTheory.WallVerify,
+  RTheory.ExactField, RTheory.ExactLie,
+  RTheory.RatSparse, RTheory.ExactClifford,
+  RTheory.RatFunc, RTheory.ExactQt;
 
 var
   Registry: TProofRegistry;
@@ -63,7 +75,7 @@ begin
     WriteLn;
 
     WriteLn('=== Numeric verification (CHECKED-strength confirmation) ===');
-    SetLength(Checks, 28);
+    SetLength(Checks, 39);
     Checks[0] := NewRecipProof;
     Checks[1] := NewFlip1Proof;
     Checks[2] := NewFlip2Proof;
@@ -100,6 +112,25 @@ begin
     Checks[25] := TWallChain4Proof.Create;
     Checks[26] := TWallWickProof.Create;
     Checks[27] := TWallCommutantProof.Create;
+    { Exact Pascal ports (RTheory.ExactLie): zero-residual re-derivations
+      in Q(sqrt(2), sqrt(3)) of the e70/e71/e72 Sage scripts }
+    Checks[28] := TE70ExactProof.Create;
+    Checks[29] := TE71ExactProof.Create;
+    Checks[30] := TE72ExactProof.Create;
+    { Batch-2 exact ports (2026-10-17): the Q-linear Clifford family
+      (RTheory.ExactClifford, sparse exact rational nullspaces) and
+      the Q(t) family (RTheory.ExactQt on the RTheory.RatFunc
+      engine). Only objects whose verdict is PASS are wired into
+      this gate; T2-EXACT / T3-EXACT / QFLIP-EXACT are converted
+      but stand as findings (CONVERSION.md batch 2). }
+    Checks[31] := TQ4ExactProof.Create;
+    Checks[32] := TD2ExactProof.Create;
+    Checks[33] := TD3bExactProof.Create;
+    Checks[34] := TMRefClosureProof.Create;
+    Checks[35] := TMRefDetProof.Create;
+    Checks[36] := TMRefKillingProof.Create;
+    Checks[37] := TMaxwellProof.Create;
+    Checks[38] := TEntropyProof.Create;
 
     Failures := 0;
     for I := 0 to High(Checks) do

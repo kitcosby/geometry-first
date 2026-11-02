@@ -16,7 +16,9 @@ become a Pascal class you can evaluate.
 | `src/RTheory.LieVerify.pas` | A numeric Lie-closure engine (commutator brackets + RREF span basis) and 10 verifiable Lie objects: CYCLE sl(8) dim 63, SO9PATH dim 36 antisymmetric, T(x) span 4 → closure 8, E106, E107, CYCPROD, M1M2 scalar, H3H4H6 deltas, XFAM, SO3EXP θ² |
 | `src/RTheory.Wall.pas` | `RegisterWall` — the wall of `docs/WALL.md` as objects: 7 OPEN gaps (complex structure, SU(8), fermion quantum numbers, physical projection Γ, coupling dynamics, E8 host, m₂/m₀) + 1 PROVED no-go (no operator content in so(8) triality) |
 | `src/RTheory.WallVerify.pas` | Numeric wall probes: WALL-CHAIN4 (minimal chain closure dim 10 of 15), WALL-WICK (Wick-on-generators closure dim 28, not 63), WALL-COMMUTANT (T_a commutant dim 1 — no commuting complex structure) |
-| `programs/VerifyProofs.lpr` | Console program: prints the registry (76 objects), snapshots the operators, runs all 28 verifiable objects |
+| `src/RTheory.ExactField.pas` | Exact arithmetic in ℚ(√2,√3) over arbitrary-precision rationals (base-10^9 bigint core) + exact linear algebra: rank/pivots, inverse, nullspace, Sylvester inertia, Faddeeva–LeVerrier char poly — zero floating point |
+| `src/RTheory.ExactLie.pas` | EXACT Pascal ports of e70/e71/e72 (see `CONVERSION.md` batch 1): rank/closure, structure constants + Killing (5,3) by exact inertia + C₂ = (4/9)·I, Cartan dim 2 + so(3) triple + ad char-poly root pairing |
+| `programs/VerifyProofs.lpr` | Console program: prints the registry (87 objects), snapshots the operators, runs all 31 verifiable objects (28 numeric + 3 exact ports) |
 
 ## Scope discipline
 
@@ -44,6 +46,40 @@ fpc -Fu../src VerifyProofs.lpr
 Exit code 0 iff every verifiable object passes.
 
 ## Status
+
+v5 (2026-10-13, local only — not yet uploaded): the proof-archive
+conversion has begun (Kit's directive: Pascal for new proof
+programs AND the existing archive; plan + classification in
+`CONVERSION.md`). Batch 1 converts the sl(3) exact core — e70,
+e71, e72 — as **exact** Pascal re-derivations in ℚ(√2,√3), not
+numeric rechecks: rank 8 and 28/28 commutators in span; structure
+constants reconstructing all 64 commutators on all 9 entries;
+Killing signature (5,3,0) by exact Sylvester inertia; C₂ = (4/9)·I
+with zero residual; Cartan dim 2, so(3) triple, and the ad_{H₀}
+char poly proved to be exactly λ²·(even sextic). Verifiable
+objects: **31/31 PASS, exit 0, on BOTH FPC 3.2.2 installs** (this
+workspace's toolchain and the laptop WSL build — the two-engine
+rule; this also closes the v4 laptop leg marked pending below).
+The Int64-rational first version overflowed loudly on E71/E72 and
+was rebuilt on a base-10^9 bigint — see `CONVERSION.md`.
+Remaining conversion batches: the ℚ-linear Clifford family
+(q4/q5/q6a_exact/d2/d3b), the ℚ(t) family (m_refined, cross_m1_m2
+exact forms, quadrant flip, maxwell/entropy identities); the three
+Gröbner/QQbar scripts are classified NOT PORTABLE and stay Sage.
+
+v4 (2026-10-13, local only — not yet uploaded): the orthogonal
+ladder and the trig transfer are in. Registry = **87 objects**
+(76 + 11): SO10PATH, SPIN10-SPINOR, SO9-SPINOR, SO8-TRIALITY,
+SO7-SPINOR, SO6-SU4, SO5-SP4, SO4-SPLIT, SO3-SU2 (the so(3)..so(10)
+ladder, algebras and spinors, all PROVED 2026-10-13), plus XFER-MIX
+and XFER-DETB (det B ≠ 0 at PROVED, promoted from the transfer's
+scan-only CHECKED status). These are registry objects only — no new
+Pascal numeric checks; the exact Sage computations in `proofs/` are
+the proof of record. VerifyProofs still runs **28/28 PASS, exit 0**,
+verified on this workspace's FPC 3.2.2 toolchain. The standing
+two-engine cross-check on the laptop WSL FPC install is still
+PENDING for v4 (could not be run from the background session that
+built it) — v4 is not called two-engine verified until that leg runs.
 
 v3 (2026-10-13): the wall is in. Registry = **76 objects** (68 + 7
 OPEN wall gaps + 1 PROVED wall no-go); **28 verifiable objects, all

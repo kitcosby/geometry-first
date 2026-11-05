@@ -32,5 +32,9 @@ M_refined(x) =
   incompatibility; QQbar path used instead. Polynomial .roots() is
   unsupported over AA; signature read from QQbar eigenvalues with exact
   real-part signs, multiplicities included.
-Scripts: /tmp/mref_sage.py (det), /tmp/mref_sage2.py (closures),
-/tmp/mref_sage4.py (Killing), this run.
+Scripts (archived in this repo 2026-10-12; byte-identical copies of the
+/tmp originals, sha256-verified at archive time): proofs/m_refined_det.py
+(det, orig. /tmp/mref_sage.py), proofs/m_refined_closure.py (closures,
+orig. /tmp/mref_sage2.py), proofs/m_refined_killing.py (Killing, orig.
+/tmp/mref_sage4.py), proofs/m_refined_closure_aa_attempt.py (the failed
+AA route, orig. /tmp/mref_sage3.py).

@@ -1,0 +1,79 @@
+building det tensor...
+  sector +0: nullity 46
+  sector +3: nullity 16
+  sector -3: nullity 16
+  sector +6: nullity 0
+  sector -6: nullity 0
+building minors (78 and Levi)...
+Levi commutators...
+  ok P1a Jordan side rebuilt: 78 ops; Zhat normalized to (4, 1, -2)
+  derived-45 basis and minor ready
+rebuilding rep27 front-end (sympy)...
+  ok P1b rep side rebuilt: 78 assembled operators on V27
+  ok P1c rep cubic tensor built; patterns are (S,S,V) and (V,V,1) only
+  ok P2a h_R is diagonal on S (torus in the Fock basis)
+  ok P2b h_R V-eigenvectors/eigenvalues as constructed
+  ok P2c Peirce-frame torus K_0..K_4 solved inside the derived Levi by J0 restriction
+  ok P2d h_J spinor spectrum equals h_R spinor spectrum (characteristic polynomials)
+  h_J parity flip applied: True
+  ok P2e h_J J0-eigenvectors/eigenvalues as constructed
+  ok P3 Phi0 intertwines h: Phi0 h_R = h_J Phi0
+structure constants of the rep basis...
+structure constants of the derived Levi basis...
+  ok P4a Phi0 maps the rep V-eigenvectors to the J0 eigenvectors of the same h-eigenvalue (flip-adjusted)
+  ok P4b beta0(Z') = ZHATN: centre weights agree on all 27 weight vectors
+  ok P4c beta0 on the plane torus solved from the 27 weights; centre components (expect all zero: so(10) is perfect)
+  ok P4d 40 root vectors of so(10) wrt the plane torus found on the rep side
+  DEBUG root 0: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 1: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 2: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 3: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 4: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 5: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 6: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 7: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 8: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 9: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 10: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 11: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 12: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 13: nullity 0, delta ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+  DEBUG root 14: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 15: nullity 0, delta ((Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+  DEBUG root 16: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 17: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 18: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 19: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 20: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 21: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 22: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 23: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 24: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 25: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+  DEBUG root 26: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 27: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+  DEBUG root 28: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 29: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 30: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 31: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)))
+  DEBUG root 32: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 33: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+  DEBUG root 34: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 35: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+  DEBUG root 36: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 37: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+  DEBUG root 38: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(1, 1)))
+  DEBUG root 39: nullity 0, delta ((Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(-1, 1)))
+FAIL P4e every root space on the Jordan side is exactly 1-dimensional (45-coefficient solve) 
+  DEBUG distinct rep deltas: 40 of 40; duplicated: []
+Traceback (most recent call last):
+  File "/home/hatch/workspace/geometry-first/proofs/e6_phi.py", line 1081, in <module>
+    jc = bcoords_derj(RJ[g], RJ[h])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/geometry-first/proofs/e6_phi.py", line 902, in bcoords_derj
+    return bracket_coords(SC_DERJ, v, w)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/geometry-first/proofs/e6_phi.py", line 885, in bracket_coords
+    for g, vg in v.items():
+                 ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'

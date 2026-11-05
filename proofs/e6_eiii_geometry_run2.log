@@ -1,0 +1,63 @@
+building det tensor...
+  det tensor: 89 nonzero entries
+sector q=+0: 357 vars, 1359 eqs; solving...
+  nullity 46
+sector q=+3: 176 vars, 864 eqs; solving...
+  nullity 16
+sector q=-3: 176 vars, 864 eqs; solving...
+  nullity 16
+sector q=+6: 10 vars, 90 eqs; solving...
+  nullity 0
+sector q=-6: 10 vars, 90 eqs; solving...
+  nullity 0
+  ok J1 sector dims (0, +3, -3, +6, -6) = (46, 16, 16, 0, 0), total 78
+  assembled 78 basis operators
+  ok J0 known solution: delta_{6 L_E - 2 id} det = 0 (direct)
+  ok J2 all 78 basis operators satisfy delta_T det = 0 (direct)
+  ok J3 delta_[Ta,Tb] det = 0 for 780 commutators (10 fixed ops x all 78)
+building pivot minor for the 78...
+  minor inverted
+computing all pairwise commutators...
+  ok J4a all 3081 pairwise commutators lie in the span (closure, fully verified)
+  ok J4b centre of the 78-dim algebra is 0
+  ok J4c [g, g] spans the full 78 (perfect)
+  ok R1a trace form Gram is diagonal with entries (1,1,1, 2 x24)
+  ok R1b adjoint is an involution on all 78 basis operators
+  ok R1c Z' = 6L_E - 2id lies in the algebra, block scalars (4, 1, -2)
+  ok R1d signature routine controls: diag(1,-1) -> (1,1,0); [[0,1],[1,0]] -> (1,1,0); [[2,1],[1,2]] -> (2,0,0)
+  ok R2a each phi is an involution on J coords (phi^2 = I)
+  ok R2f the grading involution psi and the split sign map s are Jordan automorphisms of J preserving det (378 basis pairs, 3303 test elements)
+  Killing scalar c = (Fraction(4, 1), Fraction(0, 1)) (Killing = c * tr_27)
+  ok R3a Killing(X, Y) = c * tr_27(XY) on all 3081 basis pairs (adjoint trace from COMM vs 27-trace)
+EIII geometry: charges, symmetric pair, tangent module...
+  ok G1 every basis operator is ad(Z')-homogeneous, charges in {0, +3, -3} with counts (46, 16, 16): k = charge 0, p+ / p- the two 16s
+  ok G2 charges add under brackets: [T_a, T_b] is supported on charge q_a + q_b, and is zero when q_a + q_b = +/-6; in particular [k, k] in k, [k, p+/-] in p+/-, [p+, p-] in k, [p+, p+] = [p-, p-] = 0
+  ok G3a centre of k is 1-dimensional (spanned by Z' via G1: [Z', k] = 0)
+  ok G3b derived algebra [k, k] has dim 45
+  ok G4 the operators preserving the three Peirce pieces (J1, J1/2, J0) form a 46-dim space, equal to k
+  ok G5a Killing vanishes on p+ x p+ and on p- x p- (Killing = 4 tr_27)
+  ok G5b the Killing pairing p+ x p- is nondegenerate (rank 16)
+  ok G6a Z' acts on p+ as the scalar +3 (the U(1) charge of the tangent module)
+  ok G6b p+ is irreducible as a k-module (commutant of the restricted action is the scalars)
+  ok G6c Casimir of k' on p+ (J9 prescription) is the scalar -15/8 -- the same value as the spinor piece J1/2 of J: p+ is the 16-dimensional spinor module of so(10)
+EIII geometry: real form and Cartan decomposition...
+  ok G7a sigma_EIII preserves the algebra (span)
+  ok G7b sigma_EIII is an involution respecting all 3003 brackets in coordinates
+  ok G7c sigma preserves k and p (coordinate supports)
+  ok G7d the 78 real fixed operators split as 46 in k and 32 in p (every fixed vector is homogeneous)
+  ok G7e Ad_psi is +1 on k and -1 on p at operator level (the symmetric-pair involution)
+  ok G7f Killing on k0 (the real isotropy algebra) is negative definite: signature (0, 46)
+  ok G7g Killing on p0 is positive definite: signature (32, 0) -- Cartan decomposition of e6(-14), character -14 = 32 - 46
+  ok G8a ad(iZ'/3) preserves p0 and is real in the fixed basis (a complex structure on the real tangent space)
+  ok G8b the complex structure squares to -id on p0
+  ok G8c the complex structure is Killing-orthogonal: K(JX, JY) = K(X, Y) on p0 (Hermitian data)
+  ok G8d iZ'/3 is central in k0: [iZ'/3, k0] = 0
+  ok G9a sigma_compact preserves the algebra and is an involution in coordinates (its bracket verification is F3 of e6_real_forms.py)
+  ok G9b sigma_compact fixes k0 pointwise in coordinates: the compact form has the same real isotropy algebra k0
+  ok G9c sigma_compact fixes i.p0 elementwise: the compact dual Cartan decomposition is k0 + i p0
+  ok G10a [k0, k0] in k0 (all 1035 fixed-basis pairs)
+  ok G10b [k0, p0] in p0 (all 46 x 32 fixed-basis pairs)
+  ok G10c [p0, p0] in k0 (all 496 fixed-basis pairs)
+
+0 failures / 41 checks
+ALL PASS

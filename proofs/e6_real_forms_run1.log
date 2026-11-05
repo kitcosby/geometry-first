@@ -1,0 +1,116 @@
+building det tensor...
+  det tensor: 89 nonzero entries
+sector q=+0: 357 vars, 1359 eqs; solving...
+  nullity 46
+sector q=+3: 176 vars, 864 eqs; solving...
+  nullity 16
+sector q=-3: 176 vars, 864 eqs; solving...
+  nullity 16
+sector q=+6: 10 vars, 90 eqs; solving...
+  nullity 0
+sector q=-6: 10 vars, 90 eqs; solving...
+  nullity 0
+  ok J1 sector dims (0, +3, -3, +6, -6) = (46, 16, 16, 0, 0), total 78
+  assembled 78 basis operators
+  ok J0 known solution: delta_{6 L_E - 2 id} det = 0 (direct)
+  ok J2 all 78 basis operators satisfy delta_T det = 0 (direct)
+  ok J3 delta_[Ta,Tb] det = 0 for 780 commutators (10 fixed ops x all 78)
+building pivot minor for the 78...
+  minor inverted
+computing all pairwise commutators...
+  ok J4a all 3081 pairwise commutators lie in the span (closure, fully verified)
+  ok J4b centre of the 78-dim algebra is 0
+  ok J4c [g, g] spans the full 78 (perfect)
+  ok R1a trace form Gram is diagonal with entries (1,1,1, 2 x24)
+  ok R1b adjoint is an involution on all 78 basis operators
+  ok R1c Z' = 6L_E - 2id lies in the algebra, block scalars (4, 1, -2)
+  ok R1d signature routine controls: diag(1,-1) -> (1,1,0); [[0,1],[1,0]] -> (1,1,0); [[2,1],[1,2]] -> (2,0,0)
+  ok R2a each phi is an involution on J coords (phi^2 = I)
+  ok R2f the grading involution psi and the split sign map s are Jordan automorphisms of J preserving det (378 basis pairs, 3303 test elements)
+theta bracket verification (3003 pairs)...
+  ok R2b theta([Ta, Tb]) = [theta Ta, theta Tb] on all 3003 pairs (operator level)
+  ok R2c theta preserves the algebra: theta(Ta) in span for all a
+  ok R2d theta(Z') = -Z' in coordinates
+  ok R2e tau0 and theta commute on all 78 basis operators
+solving derivations (Leibniz equations)...
+  derivations: nullity 52
+  ok R4a derivation space (Leibniz on all 378 basis pairs) has dim 52
+  ok R4b every derivation is theta-fixed (+1 eigenspace)
+  ok R4c every derivation operator is B-antisymmetric (adjoint = -self)
+  ok R4d all 26 traceless multiplication operators L_a lie in the algebra (24 slot units + 2 diagonal differences)
+  ok R4e every L_a is theta-anti-fixed (-1 eigenspace) and B-symmetric
+  ok R4f Der (52) + W (26) spans the full 78 (structure decomposition)
+  ok J-tau0: tau is an antilinear Jordan automorphism (378 basis pairs)
+  ok J-tau0: det(tau X) = conj(det X) on all 3303 test elements
+  ok J-tau0: fixed basis of J has 27 elements, all tau-fixed, products stay fixed
+  ok J-tau0: octonion norm signature on the fixed octonions = (8, 0, 0)
+  ok J-tau0: Jordan trace-form signature on the fixed J = (27, 0, 0)
+  ok J-tau_split: tau is an antilinear Jordan automorphism (378 basis pairs)
+  ok J-tau_split: det(tau X) = conj(det X) on all 3303 test elements
+  ok J-tau_split: fixed basis of J has 27 elements, all tau-fixed, products stay fixed
+  ok J-tau_split: octonion norm signature on the fixed octonions = (4, 4, 0)
+  ok J-tau_split: Jordan trace-form signature on the fixed J = (15, 12, 0)
+  Killing scalar c = (Fraction(4, 1), Fraction(0, 1)) (Killing = c * tr_27)
+  ok R3a Killing(X, Y) = c * tr_27(XY) on all 3081 basis pairs (adjoint trace from COMM vs 27-trace)
+processing F1 sigma0 = tau0 (Jordan conjugation, compact octonions)...
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): sigma preserves the 78-dim algebra (span)
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): sigma is an involution in coordinates
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): sigma respects all 3003 brackets in coordinates
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): real fixed basis has 78 elements
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): every fixed-basis vector is sigma-fixed
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): fixed basis spans the algebra over C (rank 78)
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): fixed basis operators are sigma-fixed as matrices
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): Killing form on the fixed basis is real
+  ok F1 sigma0 = tau0 (Jordan conjugation, compact octonions): Killing signature = (26, 52, 0)
+  F1 sigma0 = tau0 (Jordan conjugation, compact octonions): signature (26, 52, 0), sigma(Z') sign 1
+processing F2 sigma_split = tau_split (Jordan conjugation, split octonions)...
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): sigma preserves the 78-dim algebra (span)
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): sigma is an involution in coordinates
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): sigma respects all 3003 brackets in coordinates
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): real fixed basis has 78 elements
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): every fixed-basis vector is sigma-fixed
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): fixed basis spans the algebra over C (rank 78)
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): fixed basis operators are sigma-fixed as matrices
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): Killing form on the fixed basis is real
+  ok F2 sigma_split = tau_split (Jordan conjugation, split octonions): Killing signature = (42, 36, 0)
+  F2 sigma_split = tau_split (Jordan conjugation, split octonions): signature (42, 36, 0), sigma(Z') sign 1
+processing F3 sigma_compact = tau0 o theta...
+  ok F3 sigma_compact = tau0 o theta: sigma preserves the 78-dim algebra (span)
+  ok F3 sigma_compact = tau0 o theta: sigma is an involution in coordinates
+  ok F3 sigma_compact = tau0 o theta: sigma respects all 3003 brackets in coordinates
+  ok F3 sigma_compact = tau0 o theta: real fixed basis has 78 elements
+  ok F3 sigma_compact = tau0 o theta: every fixed-basis vector is sigma-fixed
+  ok F3 sigma_compact = tau0 o theta: fixed basis spans the algebra over C (rank 78)
+  ok F3 sigma_compact = tau0 o theta: fixed basis operators are sigma-fixed as matrices
+  ok F3 sigma_compact = tau0 o theta: Killing form on the fixed basis is real
+  ok F3 sigma_compact = tau0 o theta: Killing signature = (0, 78, 0)
+  F3 sigma_compact = tau0 o theta: signature (0, 78, 0), sigma(Z') sign -1
+processing F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading)...
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): sigma preserves the 78-dim algebra (span)
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): sigma is an involution in coordinates
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): sigma respects all 3003 brackets in coordinates
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): real fixed basis has 78 elements
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): every fixed-basis vector is sigma-fixed
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): fixed basis spans the algebra over C (rank 78)
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): fixed basis operators are sigma-fixed as matrices
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): Killing form on the fixed basis is real
+  ok F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): Killing signature = (32, 46, 0)
+  F4 sigma_EIII = tau0 o theta o Ad_psi (Peirce grading): signature (32, 46, 0), sigma(Z') sign -1
+processing F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi...
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: sigma preserves the 78-dim algebra (span)
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: sigma is an involution in coordinates
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: sigma respects all 3003 brackets in coordinates
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: real fixed basis has 78 elements
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: every fixed-basis vector is sigma-fixed
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: fixed basis spans the algebra over C (rank 78)
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: fixed basis operators are sigma-fixed as matrices
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: Killing form on the fixed basis is real
+  ok F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: Killing signature = (40, 38, 0)
+  F5 sigma_2 = tau0 o theta o Ad_s o Ad_psi: signature (40, 38, 0), sigma(Z') sign -1
+  ok F6 sigma(Z') signs: +1 for the two Jordan-induced conjugations, -1 for sigma_compact, sigma_EIII, sigma_2
+  ok F7 sigma0: tau on J intertwines sigma on the algebra (all 78 x 27 basis pairs)
+  ok F7 sigma_split: tau on J intertwines sigma on the algebra (all 78 x 27 basis pairs)
+  ok F8 Z' spectrum (4, 1, -2) is disjoint from its negative (-4, -1, 2): no compatible conjugation on J for the three non-Jordan forms (with F6)
+
+0 failures / 83 checks
+ALL PASS

@@ -1,0 +1,41 @@
+building det tensor...
+  sector +0: nullity 46
+  sector +3: nullity 16
+  sector -3: nullity 16
+  sector +6: nullity 0
+  sector -6: nullity 0
+building minors (78 and Levi)...
+Levi commutators...
+  ok P1a Jordan side rebuilt: 78 ops; Zhat normalized to (4, 1, -2)
+  derived-45 basis and minor ready
+rebuilding rep27 front-end (sympy)...
+  ok P1b rep side rebuilt: 78 assembled operators on V27
+  ok P1c rep cubic tensor built; patterns are (S,S,V) and (V,V,1) only
+  ok P2a h_R is diagonal on S (torus in the Fock basis)
+  ok P2b h_R V-eigenvectors/eigenvalues as constructed
+  ok P2c Peirce-frame torus K_0..K_4 solved inside the derived Levi by J0 restriction
+  ok P2d h_J spinor spectrum equals h_R spinor spectrum (characteristic polynomials)
+  h_J parity flip applied: True
+  ok P2e h_J J0-eigenvectors/eigenvalues as constructed
+  ok P3 Phi0 intertwines h: Phi0 h_R = h_J Phi0
+structure constants of the rep basis...
+structure constants of the derived Levi basis...
+  ok P4a Phi0 maps the rep V-eigenvectors to the J0 eigenvectors of the same h-eigenvalue (flip-adjusted)
+  ok P4b beta0(Z') = ZHATN: centre weights agree on all 27 weight vectors
+  ok P4c beta0 on the plane torus solved from the 27 weights; centre components (expect all zero: so(10) is perfect)
+  ok P4d 40 root vectors of so(10) wrt the plane torus found on the rep side
+  ok P4e every root space on the Jordan side is exactly 1-dimensional (45-coefficient solve)
+  DEBUG distinct rep deltas: 40 of 40; duplicated: []
+  ok P4f root-bracket shapes: every root-root bracket is a single root or a torus element, on both sides; centre components of the images vanish
+  ok P4g root scale factors t_g solved from the bracket relations (seeded at 1 where the character freedom remains)
+  ok P4h all 780 root-root bracket relations hold as full DERJ-coordinate vectors with the solved t_g
+  ok P4i beta0 assembled on all 46 Levi basis operators
+  ok P5a tau ratios: root-action graphs connect all 16 spinor weights and all 10 vector weights, cycle-consistent
+Traceback (most recent call last):
+  File "/home/hatch/workspace/geometry-first/proofs/e6_phi.py", line 1323, in <module>
+    e[a] = pscale(v, TAU_S[t])
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/geometry-first/proofs/e6_phi.py", line 58, in pscale
+    def pscale(a, f): return (a[0] * f, a[1] * f)
+                              ~~~~~^~~
+TypeError: can't multiply sequence by non-int of type 'Fraction'

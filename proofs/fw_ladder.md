@@ -173,3 +173,40 @@ $\mathfrak{sl}(n,\mathbb{R})$ at every rung through
 $\mathfrak{sl}(10,\mathbb{R})$. Scope unchanged from §1: the two
 specific diagonals only — the universal E104 statement stays
 OPEN, and no claim is made for $n > 10$.
+
+## Addendum 2026-10-21 — extension to n = 11
+
+At Kit's order, the ladder was extended by one rung. Same
+script (`proofs/fw_ladder.py`), same 10 samples, same method and
+identification criteria as §§1–6; the run configuration is the
+two-line prefix of §8 with `N = 11`, executed on SageMath 9.5
+(stdin mode, laptop WSL `lampy` distro), exact arithmetic in
+QQbar. Both rungs PROVED (exact closure over QQbar):
+
+| n | Variant | Sample span | Closure | Killing (pos, neg, zero) |
+|---|---|---|---|---|
+| 11 | FW | 7 | **120** | (65, 55, 0) |
+| 11 | DA | 7 | **120** | (65, 55, 0) |
+
+Every closure equals $n^2 - 1 = 120$, every closure basis is
+entirely traceless, and the Killing signature equals the split
+form $\big(\tfrac{n^2+n-2}{2}, \tfrac{n^2-n}{2}, 0\big) = (65, 55, 0)$
+exactly. Run times: FW 407.7 s, DA 369.2 s. Run outputs archived
+at `sage_proofs/fw_ladder_n11_FW_output.txt` and
+`sage_proofs/fw_ladder_n11_DA_output.txt`.
+
+This run supersedes the rung's earlier record: on 2026-10-16 the
+n = 11 rung was run on the desktop leg in exact GF(p) arithmetic
+at two primes (p = 1000033 and p = 999983), establishing closure
+120 and tracelessness at CHECKED grade with the Killing signature
+not computed (draft addendum of 2026-10-16, retained for the
+record). The Sage-exact run above supplies the missing Killing
+cross-check and brings n = 11 to the same grade as the rest of
+the ladder.
+
+The ladder now stands at **n = 3..11 for both variants (18
+rungs), all PROVED**: both diagonal families generate
+$\mathfrak{sl}(n,\mathbb{R})$ at every rung through
+$\mathfrak{sl}(11,\mathbb{R})$. Scope unchanged from §1: the two
+specific diagonals only — the universal E104 statement stays
+OPEN, and no claim is made for $n > 11$.

@@ -1,0 +1,20 @@
+building det tensor...
+  sector +0: nullity 46
+  sector +3: nullity 16
+  sector -3: nullity 16
+  sector +6: nullity 0
+  sector -6: nullity 0
+building minors (78 and Levi)...
+Levi commutators...
+  ok P1a Jordan side rebuilt: 78 ops; Zhat normalized to (4, 1, -2)
+  derived-45 basis and minor ready
+rebuilding rep27 front-end (sympy)...
+  ok P1b rep side rebuilt: 78 assembled operators on V27
+  ok P1c rep cubic tensor built; patterns are (S,S,V) and (V,V,1) only
+  ok P2a h_R is diagonal on S (torus in the Fock basis)
+  ok P2b h_R V-eigenvectors/eigenvalues as constructed
+  ok P2c Peirce-frame torus K_0..K_4 solved inside the derived Levi by J0 restriction
+  ok P2d h_J spinor spectrum equals h_R spinor spectrum (characteristic polynomials)
+  h_J parity flip applied: True
+FAIL P2e h_J J0-eigenvectors/eigenvalues as constructed 
+FAIL P3 Phi0 intertwines h: Phi0 h_R = h_J Phi0 
